@@ -1,0 +1,33 @@
+.cart {
+    position: relative;
+
+    &-btn {
+        padding: 10px 15px 10px 65px; 
+        background: #f0f0f0 url(../../assets/shopping-cart.svg);
+        background-position: 10px 2px;
+        background-repeat: no-repeat;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    &-quantity {
+        $quantityBgc: rgba(48, 146, 125, 0.918);
+        $quantitySize: 23px;
+        position: absolute;
+        top: -5px;
+        right: -7px;
+        border-radius: 50%;
+        border-radius: 50%;
+        width: $quantitySize;
+        height: $quantitySize;
+        padding: 0px;
+        background: $quantityBgc;
+        border: 2px solid darken($quantityBgc, 15);
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+}
