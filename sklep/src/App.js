@@ -13,15 +13,13 @@ class App extends Component {
         addedToCartProducts: [
           {
             productId: 1,
-            quantity: 2
+            quantity: 5
           },
           {
             productId: 3,
             quantity: 4
           }
         ],
-        computedTotalCartQuantity: 6,
-        computedTotalCartValue: 1450,
         currency: "zł"
       },
       user: {
@@ -38,7 +36,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header cart={cart} />
+        <Header cart={cart} products={products} />
         <Content products={products} />
       </div>
     );

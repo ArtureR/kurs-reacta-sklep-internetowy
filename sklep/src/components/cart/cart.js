@@ -2,13 +2,21 @@ import React from "react";
 import "./cart.scss";
 
 const Cart = (props) => {
-    const { cart } = props;
-    const displayedCartValue = `${cart.computedTotalCartValue}${cart.currency}`;
+    const { cart,products } = props;
+    const totalCartValue = cart.addedToCartProducts.reduce((previousValue, currentItem) => {
+        const currentItemValue = products.find(item => item.id === currentItem.productId).price;
+        const currentItemsValue = currentItemValue * currentItem.quantity;
+        return previousValue + currentItemsValue;
+    },0);
+    const totalCartQuantity = cart.addedToCartProducts.reduce((previousItem, currentItem) => {
+        return previousItem.quantity + currentItem.quantity;
+    });
+    const displayedCartValue = `${totalCartValue}${cart.currency}`;
 
     return (
         <form className="cart form-inline">
             <button className="cart-btn btn btn-outline-success">{displayedCartValue}</button>
-            <div className="cart-quantity">{cart.computedTotalCartQuantity}</div>
+            <div className="cart-quantity">{totalCartQuantity}</div>
         </form>
     );
 };
