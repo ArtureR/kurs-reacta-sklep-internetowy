@@ -2,9 +2,9 @@ import React from "react";
 import "./cart.scss";
 
 const Cart = (props) => {
-    const { cart,products } = props;
+    const { cart,getProductById } = props;
     const totalCartValue = cart.addedToCartProducts.reduce((previousValue, currentItem) => {
-        const currentItemValue = products.find(item => item.id === currentItem.productId).price;
+        const currentItemValue = getProductById(currentItem.productId).price;
         const currentItemsValue = currentItemValue * currentItem.quantity;
         return previousValue + currentItemsValue;
     },0);

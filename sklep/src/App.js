@@ -13,7 +13,7 @@ class App extends Component {
         addedToCartProducts: [
           {
             productId: 1,
-            quantity: 5
+            quantity: 3
           },
           {
             productId: 3,
@@ -31,12 +31,16 @@ class App extends Component {
     this.state = this.initialState;
   }
 
+  getProductById(productId){
+    return products.find(item => item.id === productId);
+  }
+
   render() {
     const { cart } = this.state;
 
     return (
       <div className="App">
-        <Header cart={cart} products={products} />
+        <Header cart={cart} getProductById={this.getProductById} />
         <Content products={products} />
       </div>
     );
