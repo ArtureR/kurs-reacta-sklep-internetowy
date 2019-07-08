@@ -45,16 +45,22 @@ class App extends Component {
 
 
   addToCart = (productId, quantity) => {
-    const newAddedToCartProducts = [{
-      productId: productId,
-      quantity: quantity
-    }];
+    const newProductsInCart = [...this.state.cart.addedToCartProducts];
+    const productInCartIndex = newProductsInCart.findIndex(item => item.productId === productId);
+    if (productInCartIndex >= 0) {
+      newProductsInCart[productInCartIndex].quantity++;
+    } else {
+      newProductsInCart.push({
+        productId: productId,
+        quantity: quantity
+      });
+    }
 
     this.setState(prevState => ({
       ...prevState,
       cart: {
         ...prevState.cart,
-        addedToCartProducts: newAddedToCartProducts,
+        addedToCartProducts: newProductsInCart,
       }
     }));
   }
