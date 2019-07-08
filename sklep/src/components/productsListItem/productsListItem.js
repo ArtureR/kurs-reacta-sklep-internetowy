@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductsListItem = (props) => {
     return (
-        <div className="col-4 products-list-item mb-4" key={props.product.id}>
+        <div className="col-2 products-list-item mb-4" key={props.product.id}>
             <div className="card">
                 <img className="products-list-item-photo card-img-top" src={props.product.photo} alt={props.product.name} />
                 <div className="card-body">

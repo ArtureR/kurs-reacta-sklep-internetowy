@@ -5,38 +5,38 @@
             "name": "Pies",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
-            "photo": "http://lorempixel.com/400/600/animals/1/"
+            "photo": "http://lorempixel.com/400/400/animals/1/"
         },
         {
             "id": 2,
             "name": "Kot",
             "description": "Lorem ipsum es dolores santi2",
             "price": 154,
-            "photo": "http://lorempixel.com/400/600/animals/2/"
+            "photo": "http://lorempixel.com/400/400/animals/2/"
         },        {
             "id": 3,
             "name": "Lama",
             "description": "Lorem ipsum es dolores santi3",
             "price": 99,
-            "photo": "http://lorempixel.com/400/600/animals/3/"
+            "photo": "http://lorempixel.com/400/400/animals/3/"
         },        {
             "id": 4,
             "name": "Koń",
             "description": "Lorem ipsum es dolores santi4",
             "price": 59,
-            "photo": "http://lorempixel.com/400/600/animals/4/"
+            "photo": "http://lorempixel.com/400/400/animals/4/"
         },        {
             "id": 5,
             "name": "Rybka",
             "description": "Lorem ipsum es dolores santi5",
             "price": 33,
-            "photo": "http://lorempixel.com/400/600/animals/5/"
+            "photo": "http://lorempixel.com/400/400/animals/5/"
         },        {
             "id": 6,
             "name": "Żyrafa",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
-            "photo": "http://lorempixel.com/400/600/animals/3/"
+            "photo": "http://lorempixel.com/400/400/animals/3/"
         }
     ]
 }
