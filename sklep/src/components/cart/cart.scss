@@ -6,6 +6,8 @@
         background: #f0f0f0 url(../../assets/shopping-cart.svg);
         background-position: 10px 2px;
         background-repeat: no-repeat;
+        min-width: 135px;
+        box-sizing: border-box;
 
         &:hover {
             color: #000;

@@ -29,14 +29,19 @@ class Cart extends Component {
     }
 
     render() {
-        const { cart } = this.props;
+        const { cart, onSetSidebarOpen } = this.props;
         const displayedCartValue = `${this.totalCartValue()}${cart.currency}`;
 
         return (
-            <form className="cart form-inline">
-                <button className="cart-btn btn btn-outline-success">{displayedCartValue}</button>
+            <div className="cart form-inline">
+                <button
+                    className="cart-btn btn btn-outline-success"
+                    onClick={() => onSetSidebarOpen()}
+                >
+                    {displayedCartValue}
+                </button>
                 <div className="cart-quantity">{this.totalCartQuantity()}</div>
-            </form>
+            </div>
         );
     }
 };
