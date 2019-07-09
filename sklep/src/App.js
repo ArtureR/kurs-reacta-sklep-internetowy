@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.initialState = {
+    this.mockupState = {
       cart: {
         addedToCartProducts: [
           {
@@ -28,11 +28,41 @@ class App extends Component {
       }
     };
 
+    this.initialState = {
+      cart: {
+        addedToCartProducts: [],
+        currency: "zł"
+      }
+    };
+
+    // this.state = this.mockupState;
     this.state = this.initialState;
   }
 
-  getProductById(productId){
+  getProductById(productId) {
     return products.find(item => item.id === productId);
+  }
+
+
+  addToCart = (productId, quantity) => {
+    const newProductsInCart = [...this.state.cart.addedToCartProducts];
+    const productInCartIndex = newProductsInCart.findIndex(item => item.productId === productId);
+    if (productInCartIndex >= 0) {
+      newProductsInCart[productInCartIndex].quantity++;
+    } else {
+      newProductsInCart.push({
+        productId: productId,
+        quantity: quantity
+      });
+    }
+
+    this.setState(prevState => ({
+      ...prevState,
+      cart: {
+        ...prevState.cart,
+        addedToCartProducts: newProductsInCart,
+      }
+    }));
   }
 
   render() {
@@ -41,7 +71,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header cart={cart} getProductById={this.getProductById} />
-        <Content products={products} />
+        <Content products={products} addToCart={this.addToCart} />
       </div>
     );
   }
