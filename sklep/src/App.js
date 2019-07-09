@@ -1,8 +1,8 @@
-
 import React, { Component } from 'react';
 import Sidebar from "react-sidebar";
 import Header from './components/header/header';
 import Content from './components/content/content';
+import CartSidebar from './components/cartSidebar/cartSidebar';
 import { products } from './products';
 
 class App extends Component {
@@ -34,8 +34,8 @@ class App extends Component {
       sidebarOpen: false
     };
 
-    // this.state = this.mockupState;
-    this.state = this.initialState;
+    this.state = this.mockupState;
+    // this.state = this.initialState;
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
@@ -76,7 +76,7 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar
-          sidebar={<b>Sidebar content asd asdasdasdasd</b>}
+          sidebar={<CartSidebar cart={cart} getProductById={this.getProductById}/>}
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
           pullRight={true}
@@ -90,7 +90,10 @@ class App extends Component {
             overlay: { background: "rgba(0, 0, 0, 0.0)" },
           }}
         >
-          <Header cart={cart} getProductById={this.getProductById} onSetSidebarOpen={this.onSetSidebarOpen} />
+          <Header
+            cart={cart}
+            getProductById={this.getProductById}
+            onSetSidebarOpen={this.onSetSidebarOpen} />
           <Content products={products} addToCart={this.addToCart} />
         </Sidebar>
 
