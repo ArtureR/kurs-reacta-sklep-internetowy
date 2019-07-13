@@ -6,12 +6,16 @@ class CartSidebar extends Component {
         const { cart, getProductById } = this.props;
         const productsToDisplay = cart.addedToCartProducts.map((product, index) => {
             const productInfo = getProductById(product.productId);
-            const totalProductValue = product.quantity * productInfo.price;
+            const totalProductValue = `${product.quantity * productInfo.price} ${cart.currency}`;
             return (
-                <li className="list-group-item d-flex justify-content-between" key={product.productId}>
-                    <h5 className="mb-1">{productInfo.name}</h5>
-                    <p className="mb-1">{product.quantity}</p>
-                    <p className="mb-1">{totalProductValue}</p>
+                <li className="cart-sidebar-list-item list-group-item d-flex justify-content-between" key={product.productId}>
+                    <h6 className="cart-sidebar-list-item-name mb-1">{productInfo.name}</h6>
+                    <p className="cart-sidebar-list-item-quantity mb-1">{product.quantity}</p>
+                    <p className="cart-sidebar-list-item-value mb-1">{totalProductValue}</p>
+                    <button 
+                        className="cart-sidebar-list-item-remove btn"
+                        onClick={() => console.log('removed')}
+                        ></button>
                 </li>
             );
         });
@@ -20,10 +24,11 @@ class CartSidebar extends Component {
             <div className="cart-sidebar">
                 Lista produktów:
                 <ul className="list-group cart-sidebar-list">
-                    <li className="list-group-item d-flex justify-content-between">
-                        <h5 className="mb-1">Nazwa</h5>
-                        <p className="mb-1">Ilość</p>
-                        <p className="mb-1">Cena</p>
+                    <li className="cart-sidebar-list-item cart-sidebar-list-item_header list-group-item d-flex justify-content-between ">
+                        <h6 className="cart-sidebar-list-item-name mb-1">Nazwa</h6>
+                        <p className="cart-sidebar-list-item-quantity mb-1">Ilość</p>
+                        <p className="cart-sidebar-list-item-value mb-1">Cena</p>
+                        <p >Usuń</p>
                     </li>
                     {productsToDisplay}
                     </ul>

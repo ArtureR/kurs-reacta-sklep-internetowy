@@ -1,5 +1,38 @@
 .cart-sidebar {
     &-list {
-        max-width: 500px;
+        max-width: 400px;
+        min-width: 320px;
+
+        &-item {
+            $item: &;
+           
+            &_header {
+                font-weight: 600;
+                #{$item}-name {
+                    font-weight: 600;
+                }
+            }
+            &-name {
+                flex: 1;
+                font-weight: 400;
+            }
+    
+            &-quantity {
+                width: 60px;
+            }
+    
+            &-value {
+                width: 60px;
+            }
+
+            &-remove {
+                background: #fff url(../../assets/bin.svg) no-repeat;
+                content: ' ';
+                width: 35px;
+                height: inherit;
+                background-size: 34px 22px;
+            }
+        }
+
     }
 }
