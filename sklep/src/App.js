@@ -48,6 +48,19 @@ class App extends Component {
     return products.find(item => item.id === productId);
   }
 
+  removeFromCart = (productId) => {
+    // const filteredItems = items.filter(item => item !== valueToRemove)
+    const newProductsInCart = this.state.cart.addedToCartProducts.filter(item => item.productId !== productId);
+    this.setState(prevState => ({
+      ...prevState,
+      cart: {
+        ...prevState.cart,
+        addedToCartProducts: newProductsInCart,
+      }
+    }));
+    console.log('removed');
+  }
+
 
   addToCart = (productId, quantity) => {
     const newProductsInCart = [...this.state.cart.addedToCartProducts];
@@ -76,7 +89,11 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar
-          sidebar={<CartSidebar cart={cart} getProductById={this.getProductById}/>}
+          sidebar={<CartSidebar 
+              cart={cart} 
+              getProductById={this.getProductById}
+              removeFromCart={this.removeFromCart}
+          />}
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
           pullRight={true}

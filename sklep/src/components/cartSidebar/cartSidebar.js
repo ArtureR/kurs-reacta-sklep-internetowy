@@ -3,7 +3,7 @@ import "./cartSidebar.scss";
 
 class CartSidebar extends Component {
     render() {
-        const { cart, getProductById } = this.props;
+        const { cart, getProductById,removeFromCart } = this.props;
         const productsToDisplay = cart.addedToCartProducts.map((product, index) => {
             const productInfo = getProductById(product.productId);
             const totalProductValue = `${product.quantity * productInfo.price} ${cart.currency}`;
@@ -14,7 +14,7 @@ class CartSidebar extends Component {
                     <p className="cart-sidebar-list-item-value mb-1">{totalProductValue}</p>
                     <button 
                         className="cart-sidebar-list-item-remove btn"
-                        onClick={() => console.log('removed')}
+                        onClick={() => removeFromCart(product.productId)}
                         ></button>
                 </li>
             );
