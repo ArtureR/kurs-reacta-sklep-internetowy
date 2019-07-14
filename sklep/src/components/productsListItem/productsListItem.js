@@ -9,7 +9,7 @@ const ProductsListItem = (props) => {
                     <h5 className="products-list-item-title card-title">{props.product.name}</h5>
                     <h6 className="products-list-item-price card-subtitle mb-2 text-muted">{props.product.price} zł</h6>
                     <p className="products-list-item-description card-text">{props.product.description}</p>
-                    <button className="products-list-item-buy btn btn-primary" onClick={() => props.addToCart(props.product.id, 1)}>Buy</button>
+                    <button className="products-list-item-buy btn btn-primary" onClick={() => props.addToCart(props.product.id, 1)}>Kup</button>
                 </div>
             </div>
         </div>

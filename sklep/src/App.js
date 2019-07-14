@@ -48,9 +48,7 @@ class App extends Component {
     return products.find(item => item.id === productId);
   }
 
-  removeFromCart = (productId) => {
-    // const filteredItems = items.filter(item => item !== valueToRemove)
-    const newProductsInCart = this.state.cart.addedToCartProducts.filter(item => item.productId !== productId);
+  setProductsInCart = (newProductsInCart) => {
     this.setState(prevState => ({
       ...prevState,
       cart: {
@@ -58,15 +56,26 @@ class App extends Component {
         addedToCartProducts: newProductsInCart,
       }
     }));
-    console.log('removed');
+  }
+
+  removeFromCart = (productId) => {
+    const newProductsInCart = this.state.cart.addedToCartProducts.filter(item => item.productId !== productId);
+    this.setProductsInCart(newProductsInCart);
   }
 
 
   addToCart = (productId, quantity) => {
-    const newProductsInCart = [...this.state.cart.addedToCartProducts];
+    let newProductsInCart = [...this.state.cart.addedToCartProducts];
     const productInCartIndex = newProductsInCart.findIndex(item => item.productId === productId);
-    if (productInCartIndex >= 0) {
-      newProductsInCart[productInCartIndex].quantity++;
+    const productInCart = productInCartIndex >= 0 ? newProductsInCart[productInCartIndex] : false;
+    const isProductStillInCart = productInCart && (productInCart.quantity + quantity > 0); 
+
+    if (productInCart) {
+      if (isProductStillInCart) {
+        newProductsInCart[productInCartIndex].quantity = productInCart.quantity + quantity;
+      } else {
+        newProductsInCart = newProductsInCart.filter(item => item.productId !== productId);
+      }
     } else {
       newProductsInCart.push({
         productId: productId,
@@ -74,13 +83,7 @@ class App extends Component {
       });
     }
 
-    this.setState(prevState => ({
-      ...prevState,
-      cart: {
-        ...prevState.cart,
-        addedToCartProducts: newProductsInCart,
-      }
-    }));
+    this.setProductsInCart(newProductsInCart);
   }
 
   render() {
@@ -93,18 +96,20 @@ class App extends Component {
               cart={cart} 
               getProductById={this.getProductById}
               removeFromCart={this.removeFromCart}
+              addToCart={this.addToCart}
           />}
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
           pullRight={true}
-          shadow={false}
+          shadow={true}
           overlayClassName={"sidebar-overlay"}
+          // use this style in case of toggle sidebar shadow
+          // overlay: { background: "rgba(0, 0, 0, 0.0)" },
           styles={{
             sidebar: {
               background: "white",
               top: "62px",
             },
-            overlay: { background: "rgba(0, 0, 0, 0.0)" },
           }}
         >
           <Header
