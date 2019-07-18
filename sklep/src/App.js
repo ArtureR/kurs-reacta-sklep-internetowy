@@ -34,8 +34,8 @@ class App extends Component {
       sidebarOpen: false
     };
 
-    this.state = this.mockupState;
-    // this.state = this.initialState;
+    // this.state = this.mockupState;
+    this.state = this.initialState;
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
@@ -68,7 +68,7 @@ class App extends Component {
     let newProductsInCart = [...this.state.cart.addedToCartProducts];
     const productInCartIndex = newProductsInCart.findIndex(item => item.productId === productId);
     const productInCart = productInCartIndex >= 0 ? newProductsInCart[productInCartIndex] : false;
-    const isProductStillInCart = productInCart && (productInCart.quantity + quantity > 0); 
+    const isProductStillInCart = productInCart && (productInCart.quantity + quantity > 0);
 
     if (productInCart) {
       if (isProductStillInCart) {
@@ -92,11 +92,11 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar
-          sidebar={<CartSidebar 
-              cart={cart} 
-              getProductById={this.getProductById}
-              removeFromCart={this.removeFromCart}
-              addToCart={this.addToCart}
+          sidebar={<CartSidebar
+            cart={cart}
+            getProductById={this.getProductById}
+            removeFromCart={this.removeFromCart}
+            addToCart={this.addToCart}
           />}
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
@@ -109,6 +109,7 @@ class App extends Component {
             sidebar: {
               background: "white",
               top: "62px",
+              zIndex: 3
             },
           }}
         >
