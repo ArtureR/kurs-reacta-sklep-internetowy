@@ -5,6 +5,8 @@ import Content from './components/content/content';
 import CartSidebar from './components/cartSidebar/cartSidebar';
 import { products } from './products';
 import { Navigation } from './components/navigation/navigation'
+const removeDiacritics = require('diacritics').remove
+products.forEach(item => item.simpleName = removeDiacritics(item.name))
 
 class App extends Component {
   constructor(props) {
@@ -96,9 +98,9 @@ class App extends Component {
   handleSubmit = (product) => {
     //const searchedProduct = this.getProductByName(product);
     // console.log(this.getProductByName(product))
-    const searchedProduct = product.toUpperCase()
+    const searchedProduct = removeDiacritics(product.toUpperCase())
     this.setState(() => ({
-      products: products.filter((item) => item.name.toUpperCase().includes(searchedProduct))
+      products: products.filter((item) => item.simpleName.toUpperCase().includes(searchedProduct))
     }));
   }
 

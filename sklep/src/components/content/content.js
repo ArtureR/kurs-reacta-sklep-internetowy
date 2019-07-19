@@ -8,7 +8,7 @@ class Content extends React.Component {
         return (
             <div className="content">
                 {isSearchEmpty ? (
-                    <p>item not found</p>
+                    <h1>item not found</h1>
                 ) : (
                     <ProductsList products={products} addToCart={addToCart} />
                 )}
