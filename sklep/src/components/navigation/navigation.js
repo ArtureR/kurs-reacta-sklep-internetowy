@@ -8,7 +8,6 @@ export class Navigation extends React.Component {
         this.state = {
             value: ''
         };
-        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange = (event) => {
@@ -42,7 +41,7 @@ export class Navigation extends React.Component {
                             <a className="nav-link" href="#">Discounts</a>
                         </li>
                         <li className="nav-item">
-                            <form className="form-inline search-form" onSubmit={this.submitForm}>
+                            <form className="form-inline search-form" handleChange={this.submitForm}>
                                 <input
                                 value={value}
                                 onChange={this.handleChange}

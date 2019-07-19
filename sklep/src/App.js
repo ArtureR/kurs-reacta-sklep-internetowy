@@ -88,17 +88,17 @@ class App extends Component {
     this.setProductsInCart(newProductsInCart);
   }
 
-  getProductByName = (productName) => {
-    console.log(productName.value)
-    return products.find(item => item.name.toUpperCase() === productName.value.toUpperCase())
-  }
+  // getProductByName = (productName) => {
+  //   console.log(productName.value)
+  //   return products.find(item => item.name.toUpperCase() === productName.value.toUpperCase()) 
+  // }
   //dodac undefined
   handleSubmit = (product) => {
-    const searchedProduct = this.getProductByName(product)
-    console.log(this.getProductByName(product))
-    this.setState(prevState => ({
-      ...prevState,
-      products: [searchedProduct]
+    //const searchedProduct = this.getProductByName(product);
+    // console.log(this.getProductByName(product))
+    const searchedProduct = product.value.toUpperCase()
+    this.setState(() => ({
+      products: products.filter((item) => item.name.toUpperCase().includes(searchedProduct))
     }));
   }
 
