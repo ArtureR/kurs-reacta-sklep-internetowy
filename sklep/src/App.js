@@ -96,7 +96,7 @@ class App extends Component {
   handleSubmit = (product) => {
     //const searchedProduct = this.getProductByName(product);
     // console.log(this.getProductByName(product))
-    const searchedProduct = product.value.toUpperCase()
+    const searchedProduct = product.toUpperCase()
     this.setState(() => ({
       products: products.filter((item) => item.name.toUpperCase().includes(searchedProduct))
     }));

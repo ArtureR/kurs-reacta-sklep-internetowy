@@ -2,32 +2,22 @@ import React from "react";
 import './navigation.scss'
 
 export class Navigation extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            value: ''
-        };
-    }
 
     handleChange = (event) => {
         const { value } = event.target;
-        event.preventDefault();
-        this.setState({
-            value: value
-        });
+        this.props.handleSubmit(value);
     };
 
-    submitForm = (event) => {
-        event.preventDefault();
-        this.props.handleSubmit(this.state);
-        this.setState({
-           value: ''
-        });
-    }
+    // submitForm = (event) => {
+    //     event.preventDefault();
+    //     this.props.handleSubmit(this.state);
+    //     this.setState({
+    //        value: ''
+    //     });
+    // }
 
     render() {
-        const { value } = this.state
+        const { value } = this.props
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand nav-fill justify-content-center">
                 <ul className="nav navbar-nav nav-fill">
@@ -41,7 +31,7 @@ export class Navigation extends React.Component {
                             <a className="nav-link" href="#">Discounts</a>
                         </li>
                         <li className="nav-item">
-                            <form className="form-inline search-form" handleChange={this.submitForm}>
+                            <form className="form-inline search-form" handleChange={this.handleChange}>
                                 <input
                                 value={value}
                                 onChange={this.handleChange}
