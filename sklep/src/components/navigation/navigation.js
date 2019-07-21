@@ -23,7 +23,7 @@ export class Navigation extends React.Component {
                             <a className="nav-link" href="#top">Discounts</a>
                         </li>
                         <li className="nav-item">
-                            <form className="form-inline search-form" handleChange={this.handleChange}>
+                            <form className="form-inline search-form">
                                 <input
                                 value={value}
                                 onChange={this.handleChange}
