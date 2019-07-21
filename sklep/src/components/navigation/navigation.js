@@ -1,5 +1,5 @@
 import React from "react";
-import './navigation.scss'
+import './navigation.scss';
 
 export class Navigation extends React.Component {
 
@@ -8,27 +8,19 @@ export class Navigation extends React.Component {
         this.props.handleSubmit(value);
     };
 
-    // submitForm = (event) => {
-    //     event.preventDefault();
-    //     this.props.handleSubmit(this.state);
-    //     this.setState({
-    //        value: ''
-    //     });
-    // }
-
     render() {
-        const { value } = this.props
+        const { value } = this.props;
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand nav-fill justify-content-center">
                 <ul className="nav navbar-nav nav-fill">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Homepage</a>
+                            <a className="nav-link" href="#top">Homepage</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About us</a>
+                            <a className="nav-link" href="#top">About us</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Discounts</a>
+                            <a className="nav-link" href="#top">Discounts</a>
                         </li>
                         <li className="nav-item">
                             <form className="form-inline search-form" handleChange={this.handleChange}>
