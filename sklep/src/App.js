@@ -4,6 +4,9 @@ import Header from './components/header/header';
 import Content from './components/content/content';
 import CartSidebar from './components/cartSidebar/cartSidebar';
 import { products } from './products';
+import { Navigation } from './components/navigation/navigation';
+const removeDiacritics = require('diacritics').remove;
+products.forEach(item => item.simpleName = removeDiacritics(item.name));
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +26,8 @@ class App extends Component {
         ],
         currency: "zł"
       },
-      sidebarOpen: false
+      sidebarOpen: false,
+      products: products
     };
 
     this.initialState = {
@@ -31,7 +35,7 @@ class App extends Component {
         addedToCartProducts: [],
         currency: "zł"
       },
-      sidebarOpen: false
+      sidebarOpen: false,
     };
 
     // this.state = this.mockupState;
@@ -86,8 +90,15 @@ class App extends Component {
     this.setProductsInCart(newProductsInCart);
   }
 
+  handleSubmit = (product) => {
+    const searchedProduct = removeDiacritics(product.toUpperCase())
+    this.setState(() => ({
+      products: products.filter((item) => item.simpleName.toUpperCase().includes(searchedProduct))
+    }));
+  }
+
   render() {
-    const { cart } = this.state;
+    const { cart, products } = this.state;
 
     return (
       <div className="App">
@@ -117,6 +128,7 @@ class App extends Component {
             cart={cart}
             getProductById={this.getProductById}
             onSetSidebarOpen={this.onSetSidebarOpen} />
+          <Navigation handleSubmit={this.handleSubmit}/>
           <Content products={products} addToCart={this.addToCart} />
         </Sidebar>
 
