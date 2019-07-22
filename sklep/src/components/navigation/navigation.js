@@ -1,5 +1,7 @@
 import React from "react";
 import './navigation.scss';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 export class Navigation extends React.Component {
 
@@ -11,30 +13,35 @@ export class Navigation extends React.Component {
     render() {
         const { value } = this.props;
         return (
-            <nav className="navbar navbar-dark bg-dark navbar-expand nav-fill justify-content-center">
-                <ul className="nav navbar-nav nav-fill">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#top">Homepage</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#top">About us</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#top">Discounts</a>
-                        </li>
-                        <li className="nav-item">
-                            <form className="form-inline search-form">
-                                <input
-                                value={value}
-                                onChange={this.handleChange}
-                                className="form-control form-control-md" 
-                                type="text" 
-                                placeholder="Search"/>
-                                <button type="submit" className="search-button"></button>
-                            </form>
-                        </li>
-                </ul>
-            </nav>
+            <Navbar className="bg-light justify-content-center d-flex" expand="lg">
+                <Nav>
+                    <Nav.Item>
+                        <Nav.Link href="#homepage">Homepage</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="#about">About us</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="#discounts">Discounts</Nav.Link>
+                    </Nav.Item>
+                    <NavDropdown title="Categories" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">Mammals</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Reptiles</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Birds</NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Item>
+                        <form className="form-inline search-form">
+                            <input
+                            value={value}
+                            onChange={this.handleChange}
+                            className="form-control form-control-md" 
+                            type="text" 
+                            placeholder="Search"/>
+                            <button type="submit" className="search-button"></button>
+                        </form>
+                    </Nav.Item>
+                </Nav>
+            </Navbar>
         );
     }
 };

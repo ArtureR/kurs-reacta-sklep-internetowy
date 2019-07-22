@@ -39,7 +39,11 @@ class App extends Component {
     };
 
     this.state = this.mockupState;
+<<<<<<< Updated upstream
     // this.state = this.initialState;
+=======
+    //this.state = this.initialState;
+>>>>>>> Stashed changes
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
@@ -91,7 +95,7 @@ class App extends Component {
   }
 
   handleSubmit = (product) => {
-    const searchedProduct = removeDiacritics(product.toUpperCase())
+    const searchedProduct = removeDiacritics(product.toUpperCase());
     this.setState(() => ({
       products: products.filter((item) => item.simpleName.toUpperCase().includes(searchedProduct))
     }));
