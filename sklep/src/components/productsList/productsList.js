@@ -1,5 +1,6 @@
 import React from "react";
 import ProductsListItem from "../productsListItem/productsListItem";
+import { Container, Row } from 'react-bootstrap';
 
 const ProductsList = (props) => {
     const productsToDisplay = props.products.map((product, index) => {
@@ -9,11 +10,11 @@ const ProductsList = (props) => {
     });
 
     return (
-        <div className="products-list container-fluid">
-            <div className="row">
+            <Container className="products-list" fluid={true} >
+            <Row>
                 {productsToDisplay}
-            </div>
-        </div>
+            </Row>
+            </Container>
     );
 };
 
