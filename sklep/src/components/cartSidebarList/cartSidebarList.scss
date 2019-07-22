@@ -7,6 +7,9 @@
         $quantitySize: 17px;
         $quantityBgcLess: rgb(229, 106, 119);
         $quantityBgcMore: rgba(48, 146, 125, 0.918);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         &_header {
             font-weight: 600;

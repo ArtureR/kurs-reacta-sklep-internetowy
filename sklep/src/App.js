@@ -34,8 +34,8 @@ class App extends Component {
       sidebarOpen: false
     };
 
-    // this.state = this.mockupState;
-    this.state = this.initialState;
+    this.state = this.mockupState;
+    // this.state = this.initialState;
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }

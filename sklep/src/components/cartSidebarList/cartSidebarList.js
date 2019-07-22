@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, ListGroup } from 'react-bootstrap';
 import "./cartSidebarList.scss";
 
 class CartSidebarList extends Component {
@@ -10,7 +10,7 @@ class CartSidebarList extends Component {
             const totalProductValue = `${product.quantity * productInfo.price}${cart.currency}`;
             const productValue = `${productInfo.price}${cart.currency}/szt.`;
             return (
-                <li className="cart-sidebar-list-item list-group-item d-flex justify-content-between align-items-center" key={product.productId}>
+                <ListGroup.Item className="cart-sidebar-list-item" key={product.productId}>
                     <div className="cart-sidebar-list-item-description d-flex flex-column">
                         <h6 className="cart-sidebar-list-item-name mb-1">{productInfo.name}</h6>
                         <p className="cart-sidebar-list-item-price mb-1">{productValue}</p>
@@ -31,24 +31,24 @@ class CartSidebarList extends Component {
                         className="cart-sidebar-list-item-remove btn"
                         onClick={() => removeFromCart(product.productId)}
                     ></button>
-                </li>
+                </ListGroup.Item>
             );
         });
 
         return (
             <Container fluid>
                 <Row>
-                    <ul className="list-group cart-sidebar-list">
-                        <li className="cart-sidebar-list-item cart-sidebar-list-item_header list-group-item d-flex justify-content-between align-items-center">
+                    <ListGroup className="cart-sidebar-list">
+                        <ListGroup.Item className="cart-sidebar-list-item cart-sidebar-list-item_header">
                             <div className="cart-sidebar-list-item-description d-flex flex-column">
                                 <h6 className="cart-sidebar-list-item-name mb-1">Nazwa</h6>
                             </div>
                             <p className="cart-sidebar-list-item-quantity mb-1">Ilość</p>
                             <p className="cart-sidebar-list-item-value mb-1">Cena</p>
                             <p className="mb-1">Usuń</p>
-                        </li>
+                        </ListGroup.Item>
                         {productsToDisplay}
-                    </ul>
+                    </ListGroup>
                 </Row>
             </Container>
         );
