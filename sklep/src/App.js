@@ -39,11 +39,8 @@ class App extends Component {
     };
 
     this.state = this.mockupState;
-<<<<<<< Updated upstream
     // this.state = this.initialState;
-=======
     //this.state = this.initialState;
->>>>>>> Stashed changes
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
@@ -101,6 +98,14 @@ class App extends Component {
     }));
   }
 
+  handleCategorySelect = (category) => {
+    if (category === 'all') return this.setState(() => ({ products: products }));
+    const searchedCategory = removeDiacritics(category.toUpperCase());
+    this.setState(() => ({
+      products: products.filter((item) => item.category.toUpperCase().includes(searchedCategory))
+    }));
+  }
+
   render() {
     const { cart, products } = this.state;
 
@@ -131,7 +136,7 @@ class App extends Component {
             cart={cart}
             getProductById={this.getProductById}
             onSetSidebarOpen={this.onSetSidebarOpen} />
-          <Navigation handleSubmit={this.handleSubmit}/>
+          <Navigation handleSubmit={this.handleSubmit} handleCategorySelect={this.handleCategorySelect}/>
           <Content products={products} addToCart={this.addToCart} />
         </Sidebar>
 

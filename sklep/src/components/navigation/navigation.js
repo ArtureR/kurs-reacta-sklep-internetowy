@@ -1,19 +1,22 @@
 import React from "react";
+import { Navbar, Nav, Form } from 'react-bootstrap';
 import './navigation.scss';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 
 export class Navigation extends React.Component {
 
     handleChange = (event) => {
-        const { value } = event.target;
-        this.props.handleSubmit(value);
+        this.props.handleSubmit(event.target.value);
     };
+
+    handleSelect = (event) => {
+        this.props.handleCategorySelect(event.target.value);
+    }
 
     render() {
         const { value } = this.props;
         return (
-            <Navbar className="bg-light justify-content-center d-flex" expand="lg">
+            <Navbar className="bg-light" expand="sm">
                 <Nav>
                     <Nav.Item>
                         <Nav.Link href="#homepage">Homepage</Nav.Link>
@@ -24,21 +27,22 @@ export class Navigation extends React.Component {
                     <Nav.Item>
                         <Nav.Link href="#discounts">Discounts</Nav.Link>
                     </Nav.Item>
-                    <NavDropdown title="Categories" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Mammals</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Reptiles</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Birds</NavDropdown.Item>
-                    </NavDropdown>
+                    <select title="Categories" id="basic-nav-dropdown" onChange={this.handleSelect}>
+                        <option value="all">All animals</option>
+                        <option value="mammals">Mammals</option>
+                        <option value="reptiles">Reptiles</option>
+                        <option value="birds">Birds</option>
+                    </select>
                     <Nav.Item>
-                        <form className="form-inline search-form">
-                            <input
+                        <Form className="form-inline search-form">
+                            <Form.Control
                             value={value}
                             onChange={this.handleChange}
                             className="form-control form-control-md" 
                             type="text" 
                             placeholder="Search"/>
                             <button type="submit" className="search-button"></button>
-                        </form>
+                        </Form>
                     </Nav.Item>
                 </Nav>
             </Navbar>
