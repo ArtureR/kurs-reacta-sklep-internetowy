@@ -28,10 +28,10 @@ export class Navigation extends React.Component {
                         <Nav.Link href="#discounts">Discounts</Nav.Link>
                     </Nav.Item>
                     <select title="Categories" id="basic-nav-dropdown" onChange={this.handleSelect}>
-                        <option value="all">All animals</option>
                         <option value="mammals">Mammals</option>
                         <option value="reptiles">Reptiles</option>
                         <option value="birds">Birds</option>
+                        <option value="all">All animals</option>
                     </select>
                     <Nav.Item>
                         <Form className="form-inline search-form">

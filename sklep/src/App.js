@@ -5,6 +5,8 @@ import Content from './components/content/content';
 import CartSidebar from './components/cartSidebar/cartSidebar';
 import { products } from './products';
 import { Navigation } from './components/navigation/navigation';
+import Product from './components/product/product';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const removeDiacritics = require('diacritics').remove;
 products.forEach(item => item.simpleName = removeDiacritics(item.name));
 
@@ -111,35 +113,38 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Sidebar
-          sidebar={<CartSidebar 
-              cart={cart} 
+        <Router>
+          <Sidebar
+            sidebar={<CartSidebar 
+                cart={cart} 
+                getProductById={this.getProductById}
+                removeFromCart={this.removeFromCart}
+                addToCart={this.addToCart}
+            />}
+            open={this.state.sidebarOpen}
+            onSetOpen={this.onSetSidebarOpen}
+            pullRight={true}
+            shadow={true}
+            overlayClassName={"sidebar-overlay"}
+            // use this style in case of toggle sidebar shadow
+            // overlay: { background: "rgba(0, 0, 0, 0.0)" },
+            styles={{
+              sidebar: {
+                background: "white",
+                top: "62px",
+              },
+            }}
+          >
+            <Header
+              cart={cart}
               getProductById={this.getProductById}
-              removeFromCart={this.removeFromCart}
-              addToCart={this.addToCart}
-          />}
-          open={this.state.sidebarOpen}
-          onSetOpen={this.onSetSidebarOpen}
-          pullRight={true}
-          shadow={true}
-          overlayClassName={"sidebar-overlay"}
-          // use this style in case of toggle sidebar shadow
-          // overlay: { background: "rgba(0, 0, 0, 0.0)" },
-          styles={{
-            sidebar: {
-              background: "white",
-              top: "62px",
-            },
-          }}
-        >
-          <Header
-            cart={cart}
-            getProductById={this.getProductById}
-            onSetSidebarOpen={this.onSetSidebarOpen} />
-          <Navigation handleSubmit={this.handleSubmit} handleCategorySelect={this.handleCategorySelect}/>
-          <Content products={products} addToCart={this.addToCart} />
-        </Sidebar>
-
+              onSetSidebarOpen={this.onSetSidebarOpen} />
+            <Navigation handleSubmit={this.handleSubmit} handleCategorySelect={this.handleCategorySelect}/>
+              <Link to="/product">linkkkkkkkkkkkkkkkkkkkk</Link>
+            <Route path="/product" render={() => <Product products={products} />}></Route>
+            <Content products={products} addToCart={this.addToCart} />
+          </Sidebar>
+        </Router>
       </div>
     );
   }
