@@ -4,7 +4,7 @@ import "./content.scss";
 
 class Content extends React.Component {
     render() {
-        const { products, addToCart } = this.props;
+        const { products, addToCart, selectedAnimal } = this.props;
         const isSearchEmpty = products.length === 0;
         return (
             <div className="content">
@@ -14,7 +14,7 @@ class Content extends React.Component {
                         <h1>Item not found</h1>
                     </div>
                 ) : (
-                    <ProductsList products={products} addToCart={addToCart} />
+                    <ProductsList products={products} addToCart={addToCart} selectedAnimal={selectedAnimal}/>
                 )}
             </div>
         );

@@ -4,7 +4,7 @@ import ProductsListItem from "../productsListItem/productsListItem";
 const ProductsList = (props) => {
     const productsToDisplay = props.products.map((product, index) => {
         return (
-            <ProductsListItem product={product} key={index} addToCart={props.addToCart}/>
+            <ProductsListItem product={product} key={index} addToCart={props.addToCart} selectedAnimal={props.selectedAnimal}/>
         );
     });
 

@@ -6,7 +6,7 @@ import CartSidebar from './components/cartSidebar/cartSidebar';
 import { products } from './products';
 import { Navigation } from './components/navigation/navigation';
 import Product from './components/product/product';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const removeDiacritics = require('diacritics').remove;
 products.forEach(item => item.simpleName = removeDiacritics(item.name));
 
@@ -29,7 +29,8 @@ class App extends Component {
         currency: "zł"
       },
       sidebarOpen: false,
-      products: products
+      products: products,
+      animal: ''
     };
 
     this.initialState = {
@@ -108,12 +109,18 @@ class App extends Component {
     }));
   }
 
+  selectedAnimal = (animal) => {
+    console.log(animal);
+    this.setState(() => ({
+      animal: animal
+    }));
+  }
+
   render() {
-    const { cart, products } = this.state;
+    const { cart, products, animal } = this.state;
 
     return (
       <div className="App">
-        <Router>
           <Sidebar
             sidebar={<CartSidebar 
                 cart={cart} 
@@ -140,11 +147,13 @@ class App extends Component {
               getProductById={this.getProductById}
               onSetSidebarOpen={this.onSetSidebarOpen} />
             <Navigation handleSubmit={this.handleSubmit} handleCategorySelect={this.handleCategorySelect}/>
-              <Link to="/product">linkkkkkkkkkkkkkkkkkkkk</Link>
-            <Route path="/product" render={() => <Product products={products} />}></Route>
-            <Content products={products} addToCart={this.addToCart} />
+            <Router>
+              <Switch>
+                <Route path={`/:${products.name}`} render={() => <Product animal={animal} />}></Route>
+              </Switch>
+              <Content products={products} addToCart={this.addToCart} selectedAnimal={this.selectedAnimal}/>
+            </Router>
           </Sidebar>
-        </Router>
       </div>
     );
   }
