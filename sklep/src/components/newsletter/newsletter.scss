@@ -1,0 +1,26 @@
+.newsletter-content {
+    position: absolute;
+    bottom: 0;
+    margin: auto 0;
+    height: 55px;
+    background-color: rgb(29, 48, 48);
+    color: lightblue;
+    width: 100%;
+}
+
+.newsletter-text {
+    margin-top: 6px
+}
+
+.newsletter-btn {
+    border: none;
+    color: green;
+    background-color: inherit;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 20px;
+}
+
+.newsletter-btn:hover {
+    text-decoration-line: underline
+}
