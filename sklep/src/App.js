@@ -30,7 +30,7 @@ class App extends Component {
       },
       sidebarOpen: false,
       products: products,
-      animal: ''
+      animal: 'Papuga'
     };
 
     this.initialState = {
@@ -39,11 +39,12 @@ class App extends Component {
         currency: "zł"
       },
       sidebarOpen: false,
+      products: products,
+      animal: ''
     };
 
-    this.state = this.mockupState;
-    // this.state = this.initialState;
-    //this.state = this.initialState;
+    //this.state = this.mockupState;
+    this.state = this.initialState;
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }

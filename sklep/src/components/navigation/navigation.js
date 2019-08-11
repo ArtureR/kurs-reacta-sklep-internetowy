@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Form } from 'react-bootstrap';
+import { Navbar, Nav, Form, NavDropdown, } from 'react-bootstrap';
 import './navigation.scss';
 
 
@@ -27,7 +27,7 @@ export class Navigation extends React.Component {
                     <Nav.Item>
                         <Nav.Link href="#discounts">Discounts</Nav.Link>
                     </Nav.Item>
-                    <select title="Categories" id="basic-nav-dropdown" onChange={this.handleSelect}>
+                    <select as="Nav.Dropdown" title="Categories" id="basic-nav-dropdown" onChange={this.handleSelect}>
                         <option value="mammals">Mammals</option>
                         <option value="reptiles">Reptiles</option>
                         <option value="birds">Birds</option>
