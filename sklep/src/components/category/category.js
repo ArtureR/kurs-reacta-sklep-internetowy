@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductsList from '../productsList/productsList';
 
-const Category = () => {
+const Category = (props) => {
+  // const currentCategory = props.match.params.category;
+
   return (
     <div className="container">
       <h1>Category</h1>

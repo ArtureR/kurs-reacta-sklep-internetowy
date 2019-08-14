@@ -13,7 +13,7 @@ const Content = () => {
         <div className="content">
             <Route path="/about" component={About} />
             <Route 
-                path="/category" 
+                path="/category/:category" 
                 render={props => <Category {...props}/>} />
             <Route path="/product" component={Product} />
             <Route path="/search" component={SearchResults} />
