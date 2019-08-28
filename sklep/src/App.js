@@ -117,7 +117,7 @@ class App extends Component {
             cart={cart}
             getProductById={this.getProductById}
             onSetSidebarOpen={this.onSetSidebarOpen} />
-          <Content products={products} addToCart={this.addToCart} />
+          <Content addToCart={this.addToCart} />
         </Sidebar>
 
       </div>
