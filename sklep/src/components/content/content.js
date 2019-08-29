@@ -4,7 +4,7 @@ import ProductsList from '../productsList/productsList';
 const Content = (props) => {
     return (
         <div className="content">
-        <ProductsList addToCart={props.addToCart} />
+            <ProductsList addToCart={props.addToCart} />
         </div>
     );
 };

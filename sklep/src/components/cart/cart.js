@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./cart.scss";
+import { connect } from "react-redux";
+import { toggleSidebar } from "../../store/actions/actions";
 
 class Cart extends Component {
     totalCartValue() {
@@ -29,14 +31,14 @@ class Cart extends Component {
     }
 
     render() {
-        const { cart, onSetSidebarOpen } = this.props;
+        const { cart, toggleSidebar } = this.props;
         const displayedCartValue = `${this.totalCartValue()}${cart.currency}`;
 
         return (
             <div className="cart form-inline">
                 <button
                     className="cart-btn btn btn-outline-success"
-                    onClick={() => onSetSidebarOpen()}
+                    onClick={() => toggleSidebar()}
                 >
                     {displayedCartValue}
                 </button>
@@ -46,4 +48,14 @@ class Cart extends Component {
     }
 };
 
-export default Cart;
+function mapStateToProps(state) {
+    return {
+        cart2: state.cart
+    };
+}
+
+const mapDispatchToProps = {
+    toggleSidebar
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

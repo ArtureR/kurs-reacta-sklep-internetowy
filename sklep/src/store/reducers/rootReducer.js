@@ -10,7 +10,15 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-    return state;
+    switch(action.type) {
+        case 'TOGGLE_SIDEBAR':
+          return {
+            ...state,
+            sidebarOpen: !state.sidebarOpen
+          };
+        default:
+          return state;
+      }
 };
 
 export default rootReducer;

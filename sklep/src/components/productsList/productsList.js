@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => {
     return { products: state.products };
-  };
+};
 
 const ProductsList = (props) => {
     const productsToDisplay = props.products.map((product, index) => {

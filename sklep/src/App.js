@@ -4,6 +4,8 @@ import Header from './components/header/header';
 import Content from './components/content/content';
 import CartSidebar from './components/cartSidebar/cartSidebar';
 import { products } from './products';
+import { connect } from "react-redux";
+import { toggleSidebar } from "./store/actions/actions";
 
 class App extends Component {
   constructor(props) {
@@ -22,26 +24,18 @@ class App extends Component {
           }
         ],
         currency: "zł"
-      },
-      sidebarOpen: false
+      }
     };
 
     this.initialState = {
       cart: {
         addedToCartProducts: [],
         currency: "zł"
-      },
-      sidebarOpen: false
+      }
     };
 
     // this.state = this.mockupState;
     this.state = this.initialState;
-
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-  }
-
-  onSetSidebarOpen() {
-    this.setState({ sidebarOpen: !this.state.sidebarOpen });
   }
 
   getProductById(productId) {
@@ -88,6 +82,7 @@ class App extends Component {
 
   render() {
     const { cart } = this.state;
+    const { sidebarOpen, toggleSidebar } = this.props;
 
     return (
       <div className="App">
@@ -98,8 +93,8 @@ class App extends Component {
             removeFromCart={this.removeFromCart}
             addToCart={this.addToCart}
           />}
-          open={this.state.sidebarOpen}
-          onSetOpen={this.onSetSidebarOpen}
+          open={sidebarOpen}
+          onSetOpen={() => toggleSidebar()}
           pullRight={true}
           shadow={true}
           overlayClassName={"sidebar-overlay"}
@@ -116,13 +111,20 @@ class App extends Component {
           <Header
             cart={cart}
             getProductById={this.getProductById}
-            onSetSidebarOpen={this.onSetSidebarOpen} />
+          />
           <Content addToCart={this.addToCart} />
         </Sidebar>
-
       </div>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = {
+  toggleSidebar
+};
+
+const mapStateToProps = state => {
+  return { sidebarOpen: state.sidebarOpen };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
