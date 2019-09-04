@@ -2,37 +2,21 @@ import React, { Component } from "react";
 import "./cart.scss";
 import { connect } from "react-redux";
 import { toggleSidebar } from "../../store/actions/actions";
+import {
+    getTotalCartValue,
+    getTotalCartQuantity,
+    getCurrency
+} from "../../store/selectors/selectors";
 
 class Cart extends Component {
-    totalCartValue() {
-        const { cart, getProductById } = this.props;
-        const isCartEmpty = cart.addedToCartProducts.length === 0;
-        if (isCartEmpty) {
-            return 0;
-        } else {
-            return cart.addedToCartProducts.reduce((previousValue, currentItem) => {
-                const currentItemValue = getProductById(currentItem.productId).price;
-                const currentItemsValue = currentItemValue * currentItem.quantity;
-                return previousValue + currentItemsValue;
-            }, 0);
-        }
-    }
-
-    totalCartQuantity() {
-        const { cart } = this.props;
-        const isCartEmpty = cart.addedToCartProducts.length === 0;
-        if (isCartEmpty) {
-            return 0;
-        } else {
-            return cart.addedToCartProducts.reduce((previousItem, currentItem) => {
-                return previousItem + currentItem.quantity;
-            }, 0);
-        }
-    }
-
     render() {
-        const { cart, toggleSidebar } = this.props;
-        const displayedCartValue = `${this.totalCartValue()}${cart.currency}`;
+        const {
+            totalCartValue,
+            totalCartQuantity,
+            currency,
+            toggleSidebar,
+        } = this.props;
+        const displayedCartValue = `${totalCartValue}${currency}`;
 
         return (
             <div className="cart form-inline">
@@ -42,7 +26,7 @@ class Cart extends Component {
                 >
                     {displayedCartValue}
                 </button>
-                <div className="cart-quantity">{this.totalCartQuantity()}</div>
+                <div className="cart-quantity">{totalCartQuantity}</div>
             </div>
         );
     }
@@ -50,7 +34,9 @@ class Cart extends Component {
 
 function mapStateToProps(state) {
     return {
-        cart2: state.cart
+        totalCartValue: getTotalCartValue(state),
+        totalCartQuantity: getTotalCartQuantity(state),
+        currency: getCurrency(state)
     };
 }
 
