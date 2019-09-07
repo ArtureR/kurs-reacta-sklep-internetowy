@@ -24,7 +24,10 @@ class ProductsListItem extends Component {
         const { product, addToCart } = this.props;
 
         event.preventDefault();
-        addToCart(product.id, this.state.quantity);
+        addToCart({
+            id: product.id,
+            quantity: this.state.quantity
+        });
         this.setState({ quantity: 1 });
     }
 
@@ -44,8 +47,8 @@ class ProductsListItem extends Component {
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <InputGroup
-                                        prepend={<button 
-                                            className="products-list-item-buy-btn btn btn-primary pl-5 pr-5" 
+                                        prepend={<button
+                                            className="products-list-item-buy-btn btn btn-primary pl-5 pr-5"
                                             type="submit"
                                         >Kup
                                         </button>}
@@ -61,11 +64,8 @@ class ProductsListItem extends Component {
                                         append={<span className="input-group-text">szt.</span>}
                                     />
                                 </div>
-
-
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -1,10 +1,7 @@
 import React from "react";
 import ProductsListItem from "../productsListItem/productsListItem";
 import { connect } from "react-redux";
-
-const mapStateToProps = state => {
-    return { products: state.products };
-};
+import { addToCart } from "../../store/actions/actions";
 
 const ProductsList = (props) => {
     const productsToDisplay = props.products.map((product, index) => {
@@ -22,4 +19,12 @@ const ProductsList = (props) => {
     );
 };
 
-export default connect(mapStateToProps)(ProductsList);
+const mapStateToProps = state => {
+    return { products: state.products };
+};
+
+const mapDispatchToProps = {
+    addToCart
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);

@@ -3,29 +3,12 @@ import Sidebar from "react-sidebar";
 import Header from './components/header/header';
 import Content from './components/content/content';
 import CartSidebar from './components/cartSidebar/cartSidebar';
-import { products } from './products';
 import { connect } from "react-redux";
 import { toggleSidebar } from "./store/actions/actions";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.mockupState = {
-      cart: {
-        addedToCartProducts: [
-          {
-            productId: 1,
-            quantity: 3
-          },
-          {
-            productId: 3,
-            quantity: 4
-          }
-        ],
-        currency: "zł"
-      }
-    };
 
     this.initialState = {
       cart: {
@@ -34,12 +17,7 @@ class App extends Component {
       }
     };
 
-    // this.state = this.mockupState;
     this.state = this.initialState;
-  }
-
-  getProductById(productId) {
-    return products.find(item => item.id === productId);
   }
 
   setProductsInCart = (newProductsInCart) => {
@@ -57,41 +35,14 @@ class App extends Component {
     this.setProductsInCart(newProductsInCart);
   }
 
-
-  addToCart = (productId, quantity) => {
-    let newProductsInCart = [...this.state.cart.addedToCartProducts];
-    const productInCartIndex = newProductsInCart.findIndex(item => item.productId === productId);
-    const productInCart = productInCartIndex >= 0 ? newProductsInCart[productInCartIndex] : false;
-    const isProductStillInCart = productInCart && (productInCart.quantity + quantity > 0);
-
-    if (productInCart) {
-      if (isProductStillInCart) {
-        newProductsInCart[productInCartIndex].quantity = productInCart.quantity + quantity;
-      } else {
-        newProductsInCart = newProductsInCart.filter(item => item.productId !== productId);
-      }
-    } else {
-      newProductsInCart.push({
-        productId: productId,
-        quantity: quantity
-      });
-    }
-
-    this.setProductsInCart(newProductsInCart);
-  }
-
   render() {
-    const { cart } = this.state;
     const { sidebarOpen, toggleSidebar } = this.props;
 
     return (
       <div className="App">
         <Sidebar
           sidebar={<CartSidebar
-            cart={cart}
-            getProductById={this.getProductById}
             removeFromCart={this.removeFromCart}
-            addToCart={this.addToCart}
           />}
           open={sidebarOpen}
           onSetOpen={() => toggleSidebar()}
@@ -108,11 +59,8 @@ class App extends Component {
             },
           }}
         >
-          <Header
-            cart={cart}
-            getProductById={this.getProductById}
-          />
-          <Content addToCart={this.addToCart} />
+          <Header />
+          <Content />
         </Sidebar>
       </div>
     );

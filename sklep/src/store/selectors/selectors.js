@@ -1,5 +1,5 @@
 //Cart
-const getAddedToCartProducts = (state) => {
+export const getAddedToCartProducts = (state) => {
     return state.cart.addedToCartProducts;
 };
 
@@ -8,7 +8,7 @@ export const getCurrency = (state) => {
 };
 
 export const getTotalCartValue = (state) => {
-    return getAddedToCartProducts(state).reduce((previousValue, currentItem) => {
+    return getProductsInCart(state).reduce((previousValue, currentItem) => {
         return previousValue + currentItem.totalPrice;
     }, 0);
 };
@@ -21,7 +21,7 @@ export const getTotalCartQuantity = (state) => {
 
 export const getProductsInCart = (state) => {
     return getAddedToCartProducts(state).map((product) => {
-        const productInfo = getProducts(state).find(item => item.id === product.productId);;
+        const productInfo = getProducts(state).find(item => item.id === product.productId);
         return {
             ...productInfo,
             totalPrice: product.quantity * productInfo.price,
