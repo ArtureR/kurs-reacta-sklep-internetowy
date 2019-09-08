@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./cartSidebar.scss";
 import adoppt from "../../assets/adoppt.svg";
 import { connect } from "react-redux";
-import { addToCart } from "../../store/actions/actions";
+import { addToCart, removeFromCart } from "../../store/actions/actions";
 import { getProductsInCart, getCurrency } from "../../store/selectors/selectors";
 
 class CartSidebar extends Component {
@@ -78,7 +78,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    addToCart
+    addToCart,
+    removeFromCart
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartSidebar);

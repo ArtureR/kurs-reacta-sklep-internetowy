@@ -7,43 +7,13 @@ import { connect } from "react-redux";
 import { toggleSidebar } from "./store/actions/actions";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.initialState = {
-      cart: {
-        addedToCartProducts: [],
-        currency: "zł"
-      }
-    };
-
-    this.state = this.initialState;
-  }
-
-  setProductsInCart = (newProductsInCart) => {
-    this.setState(prevState => ({
-      ...prevState,
-      cart: {
-        ...prevState.cart,
-        addedToCartProducts: newProductsInCart,
-      }
-    }));
-  }
-
-  removeFromCart = (productId) => {
-    const newProductsInCart = this.state.cart.addedToCartProducts.filter(item => item.productId !== productId);
-    this.setProductsInCart(newProductsInCart);
-  }
-
   render() {
     const { sidebarOpen, toggleSidebar } = this.props;
 
     return (
       <div className="App">
         <Sidebar
-          sidebar={<CartSidebar
-            removeFromCart={this.removeFromCart}
-          />}
+          sidebar={<CartSidebar/>}
           open={sidebarOpen}
           onSetOpen={() => toggleSidebar()}
           pullRight={true}
