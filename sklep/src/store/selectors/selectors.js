@@ -31,7 +31,7 @@ export const getProductsInCart = (state) => {
 };
 
 // Products
-const getProducts = (state) => {
+export const getProducts = (state) => {
     return state.products;
 };
 

@@ -36,9 +36,9 @@ class ProductsListItem extends Component {
         const { quantity } = this.state;
 
         return (
-            <div className="col-12 col-md-6 col-xl-4 products-list-item mb-4" key={product.id}>
+            <div className="col-12 col-md-6 col-xl-3 products-list-item mb-4" key={product.id}>
                 <div className="card">
-                    <img className="products-list-item-photo card-img-top" src={product.photo} alt={product.name} />
+                    <img className="products-list-item-photo card-img-top" src={`${process.env.PUBLIC_URL}/photo/${product.photo}`}  alt={product.name} />
                     <div className="card-body">
                         <h5 className="products-list-item-title card-title">{product.name}</h5>
                         <h6 className="products-list-item-price card-subtitle mb-2 text-muted">{product.price} zł</h6>
