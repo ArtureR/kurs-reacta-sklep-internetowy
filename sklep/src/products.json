@@ -2,7 +2,8 @@
     "products": [
         {
             "id": 1,
-            "name": "Pies",
+            "name": "Husky",
+            "category": "psy",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "dog1.jpg"
