@@ -6,34 +6,172 @@
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "dog1.jpg"
+        },      {
+            "id": 2,
+            "name": "Pies2",
+            "description": "Lorem ipsum es dolores santi",
+            "price": 100,
+            "photo": "dog2.jpg"
+        },      {
+            "id": 3,
+            "name": "Pies3",
+            "description": "Lorem ipsum es dolores santi",
+            "price": 100,
+            "photo": "dog3.jpg"
+        },      {
+            "id": 4,
+            "name": "Pies4",
+            "description": "Lorem ipsum es dolores santi",
+            "price": 100,
+            "photo": "dog3.jpg"
+        },      {
+            "id": 5,
+            "name": "Corgi1",
+            "description": "Lorem ipsum es dolores santi",
+            "price": 100,
+            "photo": "corgi-4267309_1920.jpg"
+        },      {
+            "id": 6,
+            "name": "Corgi2",
+            "description": "Lorem ipsum es dolores santi",
+            "price": 100,
+            "photo": "welsh-corgi-pembroke-4264957_1920.jpg"
         },
         {
-            "id": 2,
-            "name": "Kot",
+            "id": 7,
+            "name": "Corgi3",
             "description": "Lorem ipsum es dolores santi2",
             "price": 154,
-            "photo": "cat1.jpg"
+            "photo": "corgi-4383142_1920.jpg"
         },        {
-            "id": 3,
-            "name": "Lama",
+            "id": 8,
+            "name": "Corgi4",
             "description": "Lorem ipsum es dolores santi3",
             "price": 99,
-            "photo": "lama1.jpg"
+            "photo": "welschcorgi-3593487_1920.jpg"
         },        {
-            "id": 4,
-            "name": "Koń",
+            "id": 9,
+            "name": "French bulldog",
             "description": "Lorem ipsum es dolores santi4",
             "price": 59,
-            "photo": "horse1.jpg"
+            "photo": "french-bulldog-1047518_1920.jpg"
         },        {
-            "id": 5,
-            "name": "Rybka",
+            "id": 10,
+            "name": "French bulldog",
             "description": "Lorem ipsum es dolores santi5",
             "price": 33,
-            "photo": "fish1.jpg"
+            "photo": "french-bulldog-1482630_1920.jpg"
         },        {
-            "id": 6,
-            "name": "Żyrafa",
+            "id": 11,
+            "name": "French bulldog",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "french-bulldog-4019784_1920.jpg"
+        },      {
+            "id": 12,
+            "name": "French bulldog",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "french-bulldog-4294642_1920.jpg"
+        },      {
+            "id": 13,
+            "name": "Bullterier",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bull-terrier-949979_1920.jpg"
+        },      {
+            "id": 14,
+            "name": "Bullterier",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bullterier-3633957_1920.jpg"
+        },      {
+            "id": 15,
+            "name": "Bullterier",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bullterrier-345337_1920.jpg"
+        },      {
+            "id": 16,
+            "name": "Bullterier",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bullterrier-4422295_1920.jpg"
+        },      {
+            "id": 17,
+            "name": "Bengal",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bengal-cat-1154623_1920.jpg"
+        },      {
+            "id": 18,
+            "name": "Bengal",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bengal-cat-2048416_1920.jpg"
+        },      {
+            "id": 19,
+            "name": "Bengal",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bengal-cat-4111686_1920.jpg"
+        },      {
+            "id": 20,
+            "name": "Bengal",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "bengal-cat-4375969_1920.jpg"
+        },      {     
+            "id": 21,
+            "name": "Norwegian",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "norwegian-forest-cat-2751709_1920.jpg"
+        },      {     
+            "id": 22,
+            "name": "Norwegian",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "norwegian-2908707_1920.jpg"
+        },      {     
+            "id": 23,
+            "name": "Norwegian",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "norwegian-2053015_1920.jpg"
+        },      {     
+            "id": 24,
+            "name": "Norwegian",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "norwegian-1168164_1920.jpg"
+        },      {     
+            "id": 25,
+            "name": "Ragdoll",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "ragdoll-4425884_1920.jpg"
+        },     {     
+            "id": 26,
+            "name": "Ragdoll",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "ragdoll-2602085_1920.jpg"
+        },     {     
+            "id": 27,
+            "name": "Ragdoll",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "ragdoll2602099_1920.jpg"
+        },     {     
+            "id": 28,
+            "name": "Ragdoll",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "ragdoll-1784428_1920.jpg"
+        },     {     
+            "id": 29,
+            "name": "Bullterier",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "giraffe1.jpg"
