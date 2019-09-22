@@ -13,8 +13,8 @@ const Content = () => {
         <div className="content">
             <Route path="/about" component={About} />
             <Route 
-                path="/category/:category" 
-                render={props => <Category {...props}/>} />
+                path="/category/:category?" 
+                component={Category} />
             <Route path="/product" component={Product} />
             <Route path="/search" component={SearchResults} />
             <Route exact path="/" component={Home} />
