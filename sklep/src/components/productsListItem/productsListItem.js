@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InputGroup from "../common/inputGroup";
+import { Form, InputGroup, Button, Card } from 'react-bootstrap';
 
 class ProductsListItem extends Component {
     constructor(props) {
@@ -36,39 +36,44 @@ class ProductsListItem extends Component {
         const { quantity } = this.state;
 
         return (
-            <div className="col-12 col-md-6 col-xl-3 products-list-item mb-4" key={product.id}>
-                <div className="card">
-                    <img className="products-list-item-photo card-img-top" src={`${process.env.PUBLIC_URL}/photo/${product.photo}`}  alt={product.name} />
-                    <div className="card-body">
-                        <h5 className="products-list-item-title card-title">{product.name}</h5>
-                        <h6 className="products-list-item-price card-subtitle mb-2 text-muted">{product.price} zł</h6>
-                        <p className="products-list-item-description card-text">{product.description}</p>
-                        <div className="products-list-item-buy d-flex flex-column">
-                            <form onSubmit={this.handleSubmit}>
-                                <div className="form-group">
-                                    <InputGroup
-                                        prepend={<button
-                                            className="products-list-item-buy-btn btn btn-primary pl-5 pr-5"
-                                            type="submit"
-                                        >Kup
-                                        </button>}
-                                        input={<input
-                                            type="number"
-                                            value={quantity}
-                                            min="1"
-                                            onChange={this.handleChange}
-                                            className="form-control text-center pr-0"
-                                            id={`quantity-${product.id}`}
-                                            placeholder="ilość"
-                                        />}
-                                        append={<span className="input-group-text">szt.</span>}
-                                    />
-                                </div>
-                            </form>
-                        </div>
+            <Card>
+                <Card.Img
+                    variant="top"
+                    src={`${process.env.PUBLIC_URL}/photo/${product.photo}`}
+                    alt={product.name}
+                    className="products-list-item-photo"
+                />
+                <Card.Body>
+                    <Card.Title className="products-list-item-title">{product.name}</Card.Title>
+                    <h6 className="products-list-item-price card-subtitle mb-2 text-muted">{product.price} zł</h6>
+                    <Card.Text className="products-list-item-description">{product.description}</Card.Text>
+                    <div className="products-list-item-buy d-flex flex-column">
+                        <Form onSubmit={this.handleSubmit}>
+                            <InputGroup>
+                                <InputGroup.Prepend>
+                                    <Button
+                                        variant="primary"
+                                        type="submit"
+                                        className="products-list-item-buy-btn pl-4 pr-4"
+                                    >Buy</Button>
+                                </InputGroup.Prepend>
+                                <Form.Control
+                                    type="number"
+                                    value={quantity}
+                                    min="1"
+                                    onChange={this.handleChange}
+                                    className="form-control text-center pr-0"
+                                    id={`quantity-${product.id}`}
+                                    placeholder="ilość"
+                                />
+                                <InputGroup.Append>
+                                    <InputGroup.Text>szt.</InputGroup.Text>
+                                </InputGroup.Append>
+                            </InputGroup>
+                        </Form>
                     </div>
-                </div>
-            </div>
+                </Card.Body>
+            </Card>
         );
     }
 };

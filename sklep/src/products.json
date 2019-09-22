@@ -2,38 +2,43 @@
     "products": [
         {
             "id": 1,
-            "name": "Husky",
-            "category": "psy",
+            "name": "Dogue de Bordeaux1",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "dog1.jpg"
         },      {
             "id": 2,
-            "name": "Pies2",
+            "name": "Dogue de Bordeaux2",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "dog2.jpg"
         },      {
             "id": 3,
-            "name": "Pies3",
+            "name": "Dogue de Bordeaux3",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "dog3.jpg"
         },      {
             "id": 4,
-            "name": "Pies4",
+            "name": "Dogue de Bordeaux4",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "dog3.jpg"
         },      {
             "id": 5,
             "name": "Corgi1",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "corgi-4267309_1920.jpg"
         },      {
             "id": 6,
             "name": "Corgi2",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "welsh-corgi-pembroke-4264957_1920.jpg"
@@ -41,141 +46,214 @@
         {
             "id": 7,
             "name": "Corgi3",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi2",
             "price": 154,
             "photo": "corgi-4383142_1920.jpg"
         },        {
             "id": 8,
             "name": "Corgi4",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi3",
             "price": 99,
             "photo": "welschcorgi-3593487_1920.jpg"
         },        {
             "id": 9,
-            "name": "French bulldog",
+            "name": "French bulldog1",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi4",
             "price": 59,
             "photo": "french-bulldog-1047518_1920.jpg"
         },        {
             "id": 10,
-            "name": "French bulldog",
+            "name": "French bulldog2",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi5",
             "price": 33,
             "photo": "french-bulldog-1482630_1920.jpg"
         },        {
             "id": 11,
-            "name": "French bulldog",
+            "name": "French bulldog3",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "french-bulldog-4019784_1920.jpg"
         },      {
             "id": 12,
-            "name": "French bulldog",
+            "name": "French bulldog4",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "french-bulldog-4294642_1920.jpg"
         },      {
             "id": 13,
-            "name": "Bullterier",
+            "name": "Bullterier1",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bull-terrier-949979_1920.jpg"
         },      {
             "id": 14,
-            "name": "Bullterier",
+            "name": "Bullterier2",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bullterier-3633957_1920.jpg"
         },      {
             "id": 15,
-            "name": "Bullterier",
+            "name": "Bullterier3",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bullterrier-345337_1920.jpg"
         },      {
             "id": 16,
-            "name": "Bullterier",
+            "name": "Bullterier4",
+            "category": "dogs",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bullterrier-4422295_1920.jpg"
         },      {
             "id": 17,
-            "name": "Bengal",
+            "name": "Bengal1",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bengal-cat-1154623_1920.jpg"
         },      {
             "id": 18,
-            "name": "Bengal",
+            "name": "Bengal2",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bengal-cat-2048416_1920.jpg"
         },      {
             "id": 19,
-            "name": "Bengal",
+            "name": "Bengal3",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bengal-cat-4111686_1920.jpg"
         },      {
             "id": 20,
-            "name": "Bengal",
+            "name": "Bengal4",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bengal-cat-4375969_1920.jpg"
         },      {     
             "id": 21,
-            "name": "Norwegian",
+            "name": "Norwegian Forest cat1",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "norwegian-forest-cat-2751709_1920.jpg"
         },      {     
             "id": 22,
-            "name": "Norwegian",
+            "name": "Norwegian Forest cat2",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "norwegian-2908707_1920.jpg"
         },      {     
             "id": 23,
-            "name": "Norwegian",
+            "name": "Norwegian Forest cat3",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "norwegian-2053015_1920.jpg"
         },      {     
             "id": 24,
-            "name": "Norwegian",
+            "name": "Norwegian Forest cat4",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "norwegian-1168164_1920.jpg"
         },      {     
             "id": 25,
-            "name": "Ragdoll",
+            "name": "Ragdoll1",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "ragdoll-4425884_1920.jpg"
         },     {     
             "id": 26,
-            "name": "Ragdoll",
+            "name": "Ragdoll2",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "ragdoll-2602085_1920.jpg"
         },     {     
             "id": 27,
-            "name": "Ragdoll",
+            "name": "Ragdoll3",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "ragdoll2602099_1920.jpg"
         },     {     
             "id": 28,
-            "name": "Ragdoll",
+            "name": "Ragdoll4",
+            "category": "cats",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "ragdoll-1784428_1920.jpg"
         },     {     
             "id": 29,
-            "name": "Bullterier",
+            "name": "Budgerigar1",
+            "category": "birds",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
-            "photo": "giraffe1.jpg"
+            "photo": "falista-244785_1920.jpg"
+        },     {     
+            "id": 30,
+            "name": "Budgerigar2",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "falista-1043673_1920.jpg"
+        },     {     
+            "id": 31,
+            "name": "Budgerigar3",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "falista-1828345_1920.jpg"
+        },     {     
+            "id": 32,
+            "name": "Budgerigar4",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "falista-2202031_1920.jpg"
+        },     {     
+            "id": 29,
+            "name": "Atlantic canary1",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "kanarek-426279_1920.jpg"
+        },     {     
+            "id": 29,
+            "name": "Atlantic canary2",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "kanarek-426281_1920.jpg"
+        },     {     
+            "id": 29,
+            "name": "Atlantic canary3",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "kanarek-3153848_1920.jpg"
+        },     {     
+            "id": 29,
+            "name": "Atlantic canary4",
+            "category": "birds",
+            "description": "Lorem ipsum es dolores santi6",
+            "price": 187,
+            "photo": "kanarek-4253958_1920.jpg"
+        
         }
     ]
 }
