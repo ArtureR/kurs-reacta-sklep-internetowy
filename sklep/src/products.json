@@ -2,18 +2,30 @@
     "products": [
         {
             "id": 1,
-            "name": "Dogue de Bordeaux1",
+            "name": "Dogue de Bordeaux",
             "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
-            "photo": "dog1.jpg"
-        },      {
+            "photo": "dog1.jpg",
+            "photos": [
+                "dog1.jpg",
+                "dog2.jpg",
+                "dog3.jpg",
+                "dog4.jpg"
+            ]
+            },      {
             "id": 2,
-            "name": "Dogue de Bordeaux2",
+            "name": "Corgi1",
             "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
-            "price": 100,
-            "photo": "dog2.jpg"
+            "price": 222,
+            "photo": "corgi-4267309_1920.jpg",
+            "photos": [
+                "corgi-4267309_1920.jpg",
+                "welsh-corgi-pembroke-4264957_1920.jpg",
+                "corgi-4383142_1920.jpg",
+                "welschcorgi-3593487_1920.jpg"
+            ]
         },      {
             "id": 3,
             "name": "Dogue de Bordeaux3",
@@ -27,7 +39,7 @@
             "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
-            "photo": "dog3.jpg"
+            "photo": "dog4.jpg"
         },      {
             "id": 5,
             "name": "Corgi1",
@@ -35,6 +47,7 @@
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "corgi-4267309_1920.jpg"
+            
         },      {
             "id": 6,
             "name": "Corgi2",
