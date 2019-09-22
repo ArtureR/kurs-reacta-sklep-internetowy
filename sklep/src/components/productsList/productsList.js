@@ -2,22 +2,25 @@ import React from "react";
 import ProductsListItem from "../productsListItem/productsListItem";
 import { connect } from "react-redux";
 import { addToCart } from "../../store/actions/actions";
+import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductsList = (props) => {
     const { products } = props;
 
     const productsToDisplay = products.map((product, index) => {
         return (
-            <ProductsListItem product={product} key={index} addToCart={props.addToCart}/>
+            <Col xs={12} sm={6} md={3}  className="products-list-item mb-4" key={product.id} >
+                <ProductsListItem product={product} key={index} addToCart={props.addToCart} />
+            </Col>
         );
     });
 
     return (
-        <div className="products-list container-fluid">
-            <div className="row">
+        <Container className="products-list" fluid={true} >
+            <Row>
                 {productsToDisplay}
-            </div>
-        </div>
+            </Row>
+        </Container>
     );
 };
 
@@ -26,4 +29,4 @@ const mapDispatchToProps = {
     addToCart
 };
 
-export default connect((state) => {return {};}, mapDispatchToProps)(ProductsList);
+export default connect((state) => { return {}; }, mapDispatchToProps)(ProductsList);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import ProductsList from '../../components/productsList/productsList';
 import { getProducts } from "../../store/selectors/selectors";
+import { Container, Row, Col } from 'react-bootstrap';
 import "./category.scss";
 
 const Category = (props) => {
@@ -12,10 +13,14 @@ const Category = (props) => {
   const displayedHeader = currentCategory ? currentCategory : "All animals";
 
   return (
-    <div className="container category">
-      <h1 className="category-title">{displayedHeader}</h1>
-      <ProductsList products={displayedProducts} />
-    </div>
+    <Container className="category" >
+      <Row>
+        <Col>
+          <h1 className="category-title">{displayedHeader}</h1>
+          <ProductsList products={displayedProducts} />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
