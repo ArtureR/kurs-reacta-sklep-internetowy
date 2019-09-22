@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import ProductsList from '../productsList/productsList';
+import ProductsList from '../../components/productsList/productsList';
 import { getProducts } from "../../store/selectors/selectors";
 import "./category.scss";
 
