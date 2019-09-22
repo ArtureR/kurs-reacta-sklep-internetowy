@@ -4,7 +4,7 @@ import {
   REMOVE_FROM_CART
 } from "../constants/action-types";
 
-export const addToCart = (product) => ({
+export const addToCartAction = (product) => ({
   type: ADD_TO_CART,
   product: product
 });
