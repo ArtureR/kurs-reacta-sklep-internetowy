@@ -68,7 +68,7 @@
             }
 
             &-remove {
-                background: #fff url(../../assets/bin.svg) no-repeat;
+                background: #fff url(#{$assetPath}/bin.svg) no-repeat;
                 content: ' ';
                 width: 35px;
                 height: 24px;

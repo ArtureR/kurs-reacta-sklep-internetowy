@@ -2,18 +2,31 @@
     "products": [
         {
             "id": 1,
-            "name": "Dogue de Bordeaux1",
+            "name": "Dogue de Bordeaux",
             "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
-            "photo": "dog1.jpg"
-        },      {
+            "photo": "dog1.jpg",
+            "promoted": true,
+            "photos": [
+                "dog1.jpg",
+                "dog2.jpg",
+                "dog3.jpg",
+                "dog4.jpg"
+            ]
+            },      {
             "id": 2,
-            "name": "Dogue de Bordeaux2",
+            "name": "Corgi1",
             "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
-            "price": 100,
-            "photo": "dog2.jpg"
+            "price": 222,
+            "photo": "corgi-4267309_1920.jpg",
+            "photos": [
+                "corgi-4267309_1920.jpg",
+                "welsh-corgi-pembroke-4264957_1920.jpg",
+                "corgi-4383142_1920.jpg",
+                "welschcorgi-3593487_1920.jpg"
+            ]
         },      {
             "id": 3,
             "name": "Dogue de Bordeaux3",
@@ -27,7 +40,7 @@
             "category": "dogs",
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
-            "photo": "dog3.jpg"
+            "photo": "dog4.jpg"
         },      {
             "id": 5,
             "name": "Corgi1",
@@ -35,6 +48,7 @@
             "description": "Lorem ipsum es dolores santi",
             "price": 100,
             "photo": "corgi-4267309_1920.jpg"
+            
         },      {
             "id": 6,
             "name": "Corgi2",
@@ -117,6 +131,7 @@
             "id": 17,
             "name": "Bengal1",
             "category": "cats",
+            "promoted": true,
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "bengal-cat-1154623_1920.jpg"
@@ -215,6 +230,7 @@
             "id": 31,
             "name": "Budgerigar3",
             "category": "birds",
+            "promoted": true,
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "falista-1828345_1920.jpg"
@@ -226,28 +242,28 @@
             "price": 187,
             "photo": "falista-2202031_1920.jpg"
         },     {     
-            "id": 29,
+            "id": 33,
             "name": "Atlantic canary1",
             "category": "birds",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "kanarek-426279_1920.jpg"
         },     {     
-            "id": 29,
+            "id": 34,
             "name": "Atlantic canary2",
             "category": "birds",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "kanarek-426281_1920.jpg"
         },     {     
-            "id": 29,
+            "id": 35,
             "name": "Atlantic canary3",
             "category": "birds",
             "description": "Lorem ipsum es dolores santi6",
             "price": 187,
             "photo": "kanarek-3153848_1920.jpg"
         },     {     
-            "id": 29,
+            "id": 36,
             "name": "Atlantic canary4",
             "category": "birds",
             "description": "Lorem ipsum es dolores santi6",
