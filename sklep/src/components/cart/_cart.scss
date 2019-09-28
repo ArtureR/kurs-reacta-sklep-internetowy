@@ -3,7 +3,7 @@
 
     &-btn {
         padding: 10px 15px 10px 65px; 
-        background: #f0f0f0 url(../../assets/shopping-cart.svg);
+        background: #f0f0f0 url(#{$assetPath}/shopping-cart.svg);
         background-position: 10px 2px;
         background-repeat: no-repeat;
         min-width: 135px;
@@ -11,6 +11,7 @@
 
         &:hover {
             color: #000;
+            background-color: lighten($color: $green, $amount: 20);
         }
     }
 

@@ -1,5 +1,9 @@
+$assetPath: 'assets/';
 // Override default variables before the import from node_modules\bootstrap\scss\_variables.scss
-$green: #2cc694;
+$green: #009061;
+$red: #D94900;
+$blue: #00458D;
+$orange: #D98200;
 
 $body-bg: rgba(255, 255, 255, 1);
 $navbar-light-color: rgba($green, .5) !default;
@@ -7,3 +11,9 @@ $navbar-light-color: rgba($green, .5) !default;
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
+@import '../src/components/cart/cart.scss';
+@import './components/cartSidebar/cartSidebar.scss';
+@import './components/header/header.scss';
+@import './views/category/category.scss';
+@import './views/home/home.scss';
+

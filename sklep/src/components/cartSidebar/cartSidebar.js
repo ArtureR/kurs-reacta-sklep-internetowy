@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./cartSidebar.scss";
 import adoppt from "../../assets/adoppt.svg";
 import { connect } from "react-redux";
 import { addToCartAction, removeFromCart } from "../../store/actions/actions";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./cart.scss";
+// import "./cart.scss";
 import { connect } from "react-redux";
 import { toggleSidebar } from "../../store/actions/actions";
 import {
@@ -21,7 +21,7 @@ class Cart extends Component {
         return (
             <div className="cart form-inline">
                 <button
-                    className="cart-btn btn btn-outline-success"
+                    className="cart-btn btn"
                     onClick={() => toggleSidebar()}
                 >
                     {displayedCartValue}

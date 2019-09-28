@@ -1,5 +1,4 @@
 import React from "react";
-import "./header.scss";
 import Cart from "../cart/cart";
 import { Link } from 'react-router-dom';
 

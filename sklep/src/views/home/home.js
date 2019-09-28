@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { getProducts, getPromotedProducts } from "../../store/selectors/selectors";
 import { Container, Row, Col, Button, Carousel, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './home.scss';
 import dogCategory from "../../assets/dog_category.svg";
 import birdCategory from "../../assets/bird_category.svg";
 import catCategory from "../../assets/cat_category.svg";
@@ -49,17 +48,29 @@ const Home = (props) => {
         <Col xs={12}>
           <h2>Find your best friend!</h2>
         </Col>
-        <Col xs={12} md={4} className="home-categories-item">
+        <Col xs={12} md={4} 
+          className="home-categories-item"
+          as={Link}
+          to={'/category/dogs'}
+        >
           <img className="img-fluid" src={dogCategory} alt="adoppt" />
-          <h1>Dogs</h1>
+          <h1 className="home-categories-item-label">Dogs</h1>
         </Col>
-        <Col xs={12} md={4} className="home-categories-item">
+        <Col xs={12} md={4} 
+          className="home-categories-item"
+          as={Link}
+          to={'/category/cats'}
+          >
           <img className="img-fluid" src={catCategory} alt="adoppt" />
-          <h1>Cats</h1>
+          <h1 className="home-categories-item-label">Cats</h1>
         </Col>
-        <Col xs={12} md={4} className="home-categories-item">
+        <Col xs={12} md={4} 
+          className="home-categories-item"
+          as={Link}
+          to={'/category/birds'}
+          >
           <img className="img-fluid" src={birdCategory} alt="adoppt" />
-          <h1>Birds</h1>
+          <h1 className="home-categories-item-label">Birds</h1>
         </Col>
       </Row>
     </Container>

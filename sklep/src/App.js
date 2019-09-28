@@ -27,7 +27,7 @@ class App extends Component {
               sidebar: {
                 background: "white",
                 top: "62px",
-                zIndex: 3
+                zIndex: 100
               },
             }}
           >
