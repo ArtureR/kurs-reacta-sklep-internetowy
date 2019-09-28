@@ -16,7 +16,7 @@ class Cart extends Component {
             currency,
             toggleSidebar,
         } = this.props;
-        const displayedCartValue = `${totalCartValue}${currency}`;
+        const displayedCartValue = `${currency}${totalCartValue}`;
 
         return (
             <div className="cart form-inline">

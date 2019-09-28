@@ -9,8 +9,8 @@ class CartSidebar extends Component {
         const { removeFromCart, addToCart, currency, productsInCart } = this.props;
         const isCartEmpty = productsInCart.length === 0;
         const productsToDisplay = !isCartEmpty && productsInCart.map((product) => {
-            const totalProductValue = `${product.totalPrice}${currency}`;
-            const productValue = `${product.price}${currency}/szt.`;
+            const totalProductValue = `${currency}${product.totalPrice}`;
+            const productValue = `${currency}${product.price}/szt.`;
             return (
                 <li className="cart-sidebar-list-item list-group-item d-flex justify-content-between align-items-center" key={product.id}>
                     <div className="cart-sidebar-list-item-description d-flex flex-column">
@@ -47,19 +47,19 @@ class CartSidebar extends Component {
             <div className="cart-sidebar">
                 {isCartEmpty ? (
                     <h5 className="cart-sidebar-empty d-flex justify-content-center align-items-center flex-column">
-                        <p>Twoj koszyk jest pusty!</p>
+                        <p>Your cart is empty!</p>
                         <img className="img-fluid" src={adoppt} alt="adoppt" />
-                        <p>Przygarnij przyjaciela</p>
+                        <p>Find yourself a friend</p>
                     </h5>
                 ) : (
                         <ul className="list-group cart-sidebar-list">
                             <li className="cart-sidebar-list-item cart-sidebar-list-item_header list-group-item d-flex justify-content-between align-items-center">
                                 <div className="cart-sidebar-list-item-description d-flex flex-column">
-                                    <h6 className="cart-sidebar-list-item-name mb-1">Nazwa</h6>
+                                    <h6 className="cart-sidebar-list-item-name mb-1">Name</h6>
                                 </div>
-                                <p className="cart-sidebar-list-item-quantity mb-1">Ilość</p>
-                                <p className="cart-sidebar-list-item-value mb-1">Cena</p>
-                                <p className="mb-1">Usuń</p>
+                                <p className="cart-sidebar-list-item-quantity mb-1">Quantity</p>
+                                <p className="cart-sidebar-list-item-value mb-1">Price</p>
+                                <p className="mb-1">Remove</p>
                             </li>
                             {productsToDisplay}
                         </ul>

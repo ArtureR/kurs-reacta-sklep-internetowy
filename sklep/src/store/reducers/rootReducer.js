@@ -4,7 +4,7 @@ import { getAddedToCartProducts } from '../selectors/selectors';
 const initialState = {
   cart: {
     addedToCartProducts: [],
-    currency: "zł"
+    currency: "$"
   },
   sidebarOpen: false,
   products: products

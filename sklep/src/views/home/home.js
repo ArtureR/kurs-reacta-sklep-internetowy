@@ -20,7 +20,7 @@ const Home = (props) => {
         />
         <Carousel.Caption>
           <h2 className="text-uppercase font-weight-bold">{product.name}</h2>
-          <h3>Save 30% - new promotion: <del className="text-danger font-weight-bold mr-3">{product.price * 1.3}zł</del>{product.price}zł<span></span></h3>
+          <h3>Save 30% - new promotion: <del className="text-danger font-weight-bold mr-3">${product.price * 1.3}</del>${product.price}<span></span></h3>
           <p><Button
             variant="info"
             as={Link}
