@@ -1,5 +1,9 @@
 // Override default variables before the import from node_modules\bootstrap\scss\_variables.scss
-$body-bg: rgba(48, 146, 125, 0.918);
+$green: #2cc694;
+
+$body-bg: rgba(255, 255, 255, 1);
+$navbar-light-color: rgba($green, .5) !default;
+
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

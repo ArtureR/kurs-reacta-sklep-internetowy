@@ -22,9 +22,10 @@ const ProductsListItem = (props) => {
                 <Card.Text className="products-list-item-description">{product.description}</Card.Text>
                 <AddToCart productId={product.id} />
                 <Button
-                    variant="secondary"
+                    variant="info"
                     as={Link}
                     to={`/product/${product.id}`}
+                    block
                     className="pl-4 pr-4 mt-2"
                 >Show more</Button>
             </Card.Body>

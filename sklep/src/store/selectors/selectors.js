@@ -35,6 +35,10 @@ export const getProducts = (state) => {
     return state.products;
 };
 
+export const getPromotedProducts = (state) => {
+    return state.products.filter(p => p.promoted);
+};
+
 // INFO
 // mockupState = {
 //     cart: {

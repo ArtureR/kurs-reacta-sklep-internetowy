@@ -48,7 +48,9 @@ const Product = (props) => {
 const mapDispatchToProps = {};
 
 const mapStateToProps = (state) => {
-  return { products: getProducts(state) };
+  return { 
+    products: getProducts(state),
+  };
 };
 
 

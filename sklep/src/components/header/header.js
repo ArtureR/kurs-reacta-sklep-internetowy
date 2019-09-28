@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
   return (
     <header className="mb-4">
-      <nav className="navbar sticky-top navbar-light bg-light">
+      <nav className="navbar sticky-top navbar-dark">
         <span className="navbar-brand mb-0 h1">Animal Store</span>
-        <Link to="/">Home</Link>
-        <Link to="/category">All animals</Link>
-        <Link to="/category/cats">Cats</Link>
-        <Link to="/category/dogs">Dogs</Link>
-        <Link to="/category/birds">Birds</Link>
+        <Link to="/" className="text-white">Home</Link>
+        <Link to="/category" className="text-white">All animals</Link>
+        <Link to="/category/cats" className="text-white">Cats</Link>
+        <Link to="/category/dogs" className="text-white">Dogs</Link>
+        <Link to="/category/birds" className="text-white">Birds</Link>
         <Cart/>
       </nav>
     </header>
