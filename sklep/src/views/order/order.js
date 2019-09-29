@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { getUserData, getAddressBook, getDefaultAddress } from "../../store/selectors/selectors";
+import { clearCart } from "../../store/actions/actions";
 import { Container, Row, Col, Button, Tabs, Tab, Modal } from 'react-bootstrap';
 import CartList from '../../components/cartList/cartList';
 
 
 const Order = (props) => {
   const currentTab = props.match.params.step;
-  const { history, user, addressBook, defaultAddress } = props;
+  const { history, user, addressBook, defaultAddress, clearCart } = props;
   const initTab = currentTab ? currentTab : 'products';
   const initAddress = defaultAddress ? defaultAddress : 1;
   const [currentAddressId, setAddressId] = useState(initAddress);
@@ -105,7 +106,9 @@ const Order = (props) => {
               <Col>
                 <Button
                   className="order-next-btn"
-                  onClick={handleShow}
+                  onClick={() => {
+                    handleShow();
+                  }}
                   variant="success"
                 >Confirm your order</Button>
               </Col>
@@ -118,13 +121,18 @@ const Order = (props) => {
 
   return (
     <Container className="order">
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={() => {
+        clearCart();
+        handleClose();
+        history.push("/");
+      }}>
         <Modal.Header closeButton>
           <Modal.Title>Order confirmed</Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, your order is complete and all this sweet and flufy pets just can't wait to see you!!</Modal.Body>
         <Modal.Footer>
           <Button variant="success" onClick={() => {
+            clearCart();
             handleClose();
             history.push("/");
           }}>
@@ -146,7 +154,9 @@ const Order = (props) => {
   );
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  clearCart
+};
 
 const mapStateToProps = (state) => {
   return {

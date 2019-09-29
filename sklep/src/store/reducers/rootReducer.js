@@ -22,14 +22,14 @@ const initialState = {
         city: "Wrocław",
         region: "Dolnośląskie",
         postalCode: "53-533",
-        street: "plac Grunwaldzki 1/11" 
+        street: "plac Grunwaldzki 1/11"
       },
       {
         id: 2,
         city: "Paris",
         region: "Paris",
         postalCode: "423-24243",
-        street: "Elysiuum square 342f/43" 
+        street: "Elysiuum square 342f/43"
       }
     ]
   }
@@ -41,6 +41,14 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         sidebarOpen: !state.sidebarOpen
+      };
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          addedToCartProducts: [],
+        }
       };
     case 'REMOVE_FROM_CART':
       return {
