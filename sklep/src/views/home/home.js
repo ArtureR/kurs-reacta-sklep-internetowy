@@ -36,7 +36,6 @@ const Home = (props) => {
     <Container className="home">
       <Row>
         <Col>
-          <h1>Home!!</h1>
           {hasPromotedProducts && (
             <Carousel  >
               {productsToDisplay}
