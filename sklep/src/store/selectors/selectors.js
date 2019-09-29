@@ -39,22 +39,25 @@ export const getPromotedProducts = (state) => {
     return state.products.filter(p => p.promoted);
 };
 
-// INFO
-// mockupState = {
-//     cart: {
-//       addedToCartProducts: [
-//         {
-//           productId: 1,
-//           quantity: 3
-//         },
-//         {
-//           productId: 3,
-//           quantity: 4
-//         }
-//       ],
-//       currency: "zł"
-//     }
-//   };
+// User
+export const getUserData = (state) => {
+    const { gender, firstName, lastName} = state.user;
+    return {
+        gender: gender,
+        firstName: firstName,
+        lastName: lastName,
+    };
+};
 
-// productId: productId,
-// quantity: quantity
+export const getAddressBook = (state) => {
+    return state.user.addressBook;
+};
+
+export const getDefaultAddress = (state) => {
+    return state.user.defaultAddress;
+};
+
+// Order
+// export const getCurrentAddress = (state) => {
+//     return state.order.currentAddress;
+// };

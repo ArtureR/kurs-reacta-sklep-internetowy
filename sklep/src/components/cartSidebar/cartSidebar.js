@@ -1,47 +1,27 @@
 import React, { Component } from "react";
 import adoppt from "../../assets/adoppt.svg";
 import { connect } from "react-redux";
-import { addToCartAction, removeFromCart } from "../../store/actions/actions";
-import { getProductsInCart, getCurrency } from "../../store/selectors/selectors";
+import { withRouter } from 'react-router-dom';
+import { toggleSidebar } from "../../store/actions/actions";
+import { getProductsInCart } from "../../store/selectors/selectors";
+import { Button } from 'react-bootstrap';
+import CartList from '../cartList/cartList';
+
 
 class CartSidebar extends Component {
+    constructor(props) {
+        super(props);
+        this.handleFinishOrder = this.handleFinishOrder.bind(this);
+    }
+
+    handleFinishOrder() {
+        this.props.history.push("/order");
+        this.props.toggleSidebar();
+    };
+    
     render() {
-        const { removeFromCart, addToCart, currency, productsInCart } = this.props;
+        const { productsInCart } = this.props;
         const isCartEmpty = productsInCart.length === 0;
-        const productsToDisplay = !isCartEmpty && productsInCart.map((product) => {
-            const totalProductValue = `${currency}${product.totalPrice}`;
-            const productValue = `${currency}${product.price}/szt.`;
-            return (
-                <li className="cart-sidebar-list-item list-group-item d-flex justify-content-between align-items-center" key={product.id}>
-                    <div className="cart-sidebar-list-item-description d-flex flex-column">
-                        <h6 className="cart-sidebar-list-item-name mb-1">{product.name}</h6>
-                        <p className="cart-sidebar-list-item-price mb-1">{productValue}</p>
-                    </div>
-                    <p className="cart-sidebar-list-item-quantity mb-1">
-                        <button
-                            className="cart-sidebar-list-item-quantity-less btn mr-1"
-                            onClick={() => addToCart({
-                                id: product.id,
-                                quantity: -1
-                            })}
-                        >-</button>
-                        <span>{product.quantity}</span>
-                        <button
-                            className="cart-sidebar-list-item-quantity-more btn ml-1"
-                            onClick={() => addToCart({
-                                id: product.id,
-                                quantity: 1
-                            })}
-                        >+</button>
-                    </p>
-                    <p className="cart-sidebar-list-item-value mb-1">{totalProductValue}</p>
-                    <button
-                        className="cart-sidebar-list-item-remove btn"
-                        onClick={() => removeFromCart(product.id)}
-                    ></button>
-                </li>
-            );
-        });
 
         return (
             <div className="cart-sidebar">
@@ -52,17 +32,14 @@ class CartSidebar extends Component {
                         <p>Find yourself a friend</p>
                     </h5>
                 ) : (
-                        <ul className="list-group cart-sidebar-list">
-                            <li className="cart-sidebar-list-item cart-sidebar-list-item_header list-group-item d-flex justify-content-between align-items-center">
-                                <div className="cart-sidebar-list-item-description d-flex flex-column">
-                                    <h6 className="cart-sidebar-list-item-name mb-1">Name</h6>
-                                </div>
-                                <p className="cart-sidebar-list-item-quantity mb-1">Quantity</p>
-                                <p className="cart-sidebar-list-item-value mb-1">Price</p>
-                                <p className="mb-1">Remove</p>
-                            </li>
-                            {productsToDisplay}
-                        </ul>
+                    <div>
+                        <CartList />
+                        <Button
+                            variant="info"
+                            className="pl-4 pr-4 mt-2"
+                            onClick={() => this.handleFinishOrder()}
+                        >Finish your order</Button>
+                    </div>
                     )}
             </div>
         );
@@ -71,14 +48,12 @@ class CartSidebar extends Component {
 
 function mapStateToProps(state) {
     return {
-        currency: getCurrency(state),
         productsInCart: getProductsInCart(state),
     };
 }
 
 const mapDispatchToProps = {
-    addToCart: addToCartAction,
-    removeFromCart
+    toggleSidebar
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartSidebar);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CartSidebar));

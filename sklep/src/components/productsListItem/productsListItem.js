@@ -18,7 +18,7 @@ const ProductsListItem = (props) => {
             </Link>
             <Card.Body>
                 <Card.Title className="products-list-item-title">{product.name}</Card.Title>
-                <h6 className="products-list-item-price card-subtitle mb-2 text-muted">{product.price} zł</h6>
+                <h6 className="products-list-item-price card-subtitle mb-2 text-muted">${product.price}</h6>
                 <Card.Text className="products-list-item-description">{product.description}</Card.Text>
                 <AddToCart productId={product.id} />
                 <Button

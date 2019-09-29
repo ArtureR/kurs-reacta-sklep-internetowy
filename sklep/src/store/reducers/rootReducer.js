@@ -7,7 +7,32 @@ const initialState = {
     currency: "$"
   },
   sidebarOpen: false,
-  products: products
+  products: products,
+  order: {
+    currentAddress: 1
+  },
+  user: {
+    gender: "f",
+    firstName: "Asia",
+    lastName: "Czyżo",
+    defaultAddress: 1,
+    addressBook: [
+      {
+        id: 1,
+        city: "Wrocław",
+        region: "Dolnośląskie",
+        postalCode: "53-533",
+        street: "plac Grunwaldzki 1/11" 
+      },
+      {
+        id: 2,
+        city: "Paris",
+        region: "Paris",
+        postalCode: "423-24243",
+        street: "Elysiuum square 342f/43" 
+      }
+    ]
+  }
 };
 
 function rootReducer(state = initialState, action) {

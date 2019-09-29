@@ -13,6 +13,7 @@ $navbar-light-color: rgba($green, .5) !default;
 @import '~bootstrap/scss/bootstrap.scss';
 @import '../src/components/cart/cart.scss';
 @import './components/cartSidebar/cartSidebar.scss';
+@import './components/cartList/cartList';
 @import './components/header/header.scss';
 @import './views/category/category.scss';
 @import './views/home/home.scss';

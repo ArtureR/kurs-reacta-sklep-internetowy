@@ -7,6 +7,7 @@ import Category from '../../views/category/category';
 import Product from '../../views/product/product';
 import SearchResults from '../../views/searchResults/searchResults';
 import Home from '../../views/home/home';
+import Order from '../../views/order/order';
   
 const Content = () => {
     return (  
@@ -17,6 +18,7 @@ const Content = () => {
                 component={Category} />
             <Route path="/product/:id" component={Product} />
             <Route path="/search" component={SearchResults} />
+            <Route path="/order/:step?" component={Order} />
             <Route exact path="/" component={Home} />
         </div>
     );
