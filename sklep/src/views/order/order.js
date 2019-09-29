@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { getUserData, getAddressBook, getDefaultAddress } from "../../store/selectors/selectors";
-import { Container, Row, Col, Button, Tabs, Tab } from 'react-bootstrap';
+import { Container, Row, Col, Button, Tabs, Tab, Modal } from 'react-bootstrap';
 import CartList from '../../components/cartList/cartList';
 
 
@@ -11,7 +11,13 @@ const Order = (props) => {
   const initTab = currentTab ? currentTab : 'products';
   const initAddress = defaultAddress ? defaultAddress : 1;
   const [currentAddressId, setAddressId] = useState(initAddress);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const currentAddress = addressBook.find(add => add.id === currentAddressId);
+
 
   function AddressBookSelector() {
     return addressBook.map((address) => {
@@ -99,7 +105,7 @@ const Order = (props) => {
               <Col>
                 <Button
                   className="order-next-btn"
-                  onClick={() => history.push("/")}
+                  onClick={handleShow}
                   variant="success"
                 >Confirm your order</Button>
               </Col>
@@ -112,6 +118,20 @@ const Order = (props) => {
 
   return (
     <Container className="order">
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Order confirmed</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, your order is complete and all this sweet and flufy pets just can't wait to see you!!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="success" onClick={() => {
+            handleClose();
+            history.push("/");
+          }}>
+            Ok, can't wait too
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <Row>
         <Col>
           <h1>Finalize order</h1>
